@@ -1,0 +1,528 @@
+ <!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>حاسبة معدل التفاعل على إنستغرام (Engagement Rate) — MarketAPro</title>
+  <meta name="description" content="احسب معدل التفاعل على إنستغرام بدقة خلال ثوانٍ: متوسط الإعجابات والتعليقات، الوسيط (Median)، نطاق النتائج، وتوصيات عملية + أفضل أوقات نشر عامة. أداة عربية مجانية من MarketAPro." />
+  <meta name="keywords" content="حاسبة معدل التفاعل على إنستغرام, حساب معدل التفاعل انستغرام, engagement rate instagram, معدل التفاعل, تحليل إنستغرام, متوسط الإعجابات, متوسط التعليقات" />
+
+  <link rel="canonical" href="https://marketapro.com/tools/instagram-engagement-calculator/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="حاسبة معدل التفاعل على إنستغرام — MarketAPro" />
+  <meta property="og:description" content="أداة عربية مجانية لحساب Engagement Rate على إنستغرام: متوسط الإعجابات والتعليقات + إحصاءات إضافية وتوصيات عملية." />
+  <meta property="og:url" content="https://marketapro.com/tools/instagram-engagement-calculator/" />
+  <meta property="og:type" content="website" />
+  <!-- ضع صورة OG لاحقًا -->
+  <!-- <meta property="og:image" content="https://marketapro.com/assets/og-instagram-engagement.jpg" /> -->
+  <!-- <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="حاسبة معدل التفاعل على إنستغرام من MarketAPro" /> -->
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- <meta name="twitter:image" content="https://marketapro.com/assets/og-instagram-engagement.jpg" /> -->
+
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Tool / WebApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"حاسبة معدل التفاعل على إنستغرام",
+    "url":"https://marketapro.com/tools/instagram-engagement-calculator/",
+    "applicationCategory":"BusinessApplication",
+    "operatingSystem":"Any",
+    "description":"أداة عربية مجانية لحساب معدل التفاعل على إنستغرام (Engagement Rate) بناءً على متوسط الإعجابات والتعليقات مع إحصاءات إضافية.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "publisher":{"@type":"Organization","name":"MarketAPro","url":"https://marketapro.com/"}
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"كيف أحسب معدل التفاعل على إنستغرام؟",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"معدل التفاعل (Engagement Rate) يُحسب غالبًا كالتالي: (متوسط الإعجابات + متوسط التعليقات) ÷ عدد المتابعين × 100. هذه الأداة تنفّذ المعادلة تلقائيًا وتعرض متوسطات وإحصاءات إضافية."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"هل معدل التفاعل يعتمد على عدد المتابعين فقط؟",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"عدد المتابعين مهم في المعادلة، لكن جودة المحتوى، نوع المنشور (Reels/Carousel)، وتوقيت النشر يؤثرون بقوة على التفاعل الفعلي."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"لماذا يختلف معدل التفاعل بين أدوات مختلفة؟",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"بعض الأدوات تحسب عناصر إضافية مثل الحفظ (Saves) والمشاركة (Shares) والوصول (Reach). هذه الأداة تعتمد على الإعجابات والتعليقات لأنه الأكثر توفرًا دون Insights."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* تحسينات بسيطة محلية للصفحة بدون كسر الثيم */
+    .tool-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-top:18px}
+    @media (max-width: 900px){.tool-wrap{grid-template-columns:1fr}}
+    .field{margin-top:10px}
+    label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:90px;resize:vertical}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width: 520px){.row{grid-template-columns:1fr}}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn{cursor:pointer}
+    .btn.secondary{background:rgba(255,255,255,.02)}
+    .results{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    @media (max-width: 520px){.results{grid-template-columns:1fr}}
+    .stat{
+      padding:14px;border-radius:16px;
+      background:rgba(0,0,0,.18);
+      border:1px solid var(--border);
+      text-align:center
+    }
+    .stat strong{display:block;font-size:22px}
+    .stat span{color:var(--muted);font-size:13px}
+    .list{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.9}
+    .divider{height:1px;background:var(--border);margin:14px 0}
+    .hint{font-size:13px;color:var(--muted);margin-top:8px}
+    details summary{cursor:pointer;color:var(--text);font-weight:800}
+    .toast{
+      position:fixed;left:16px;bottom:16px;
+      background:rgba(0,0,0,.65);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:10px 12px;
+      color:var(--text);
+      display:none;
+      max-width: 320px;
+      z-index: 9999;
+    }
+  </style>
+</head>
+
+<body>
+<a class="skip-link" href="#content">تخطي إلى المحتوى</a>
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="العودة للرئيسية">
+      <div class="brand-badge" aria-hidden="true"></div>
+      <div>
+        <p class="brand-title">MarketAPro</p>
+        <p class="brand-sub">حاسبة إنستغرام</p>
+      </div>
+    </a>
+
+    <nav class="nav" aria-label="القائمة الرئيسية">
+      <a href="/">الرئيسية</a>
+      <a class="active" href="/tools/">الأدوات</a>
+      <a href="https://vivamediacreative.com/ar/" rel="noopener">Viva Media Creative</a>
+    </nav>
+  </div>
+</header>
+
+<main id="content" class="container">
+  <section class="hero">
+    <div class="card">
+      <h1 style="margin:0 0 8px;font-size:28px;line-height:1.4">حاسبة معدل التفاعل على إنستغرام (Engagement Rate)</h1>
+      <p style="margin:0;color:var(--muted)">
+        أدخل عدد المتابعين وبيانات آخر N منشور لتحصل على معدل التفاعل بدقة + متوسطات وإحصاءات تساعدك على اتخاذ قرار تسويقي أفضل.
+      </p>
+      <p class="hint">
+        نصيحة: استخدم آخر <strong>10–12</strong> منشورًا للحصول على نتيجة عادلة.
+      </p>
+    </div>
+  </section>
+
+  <section class="tool-wrap">
+    <!-- Form -->
+    <div class="card" aria-label="نموذج الحساب">
+      <form id="calcForm" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="account">اسم الحساب (اختياري)</label>
+            <input id="account" type="text" placeholder="مثال: mybrand_official" autocomplete="off" />
+          </div>
+
+          <div class="field">
+            <label for="followers">عدد المتابعين *</label>
+            <input id="followers" type="number" inputmode="numeric" min="1" placeholder="مثال: 12500" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="nposts">عدد المنشورات التي تريد تحليلها (N)</label>
+            <input id="nposts" type="number" inputmode="numeric" min="1" max="100" value="10" />
+          </div>
+
+          <div class="field">
+            <label for="mode">طريقة الحساب</label>
+            <select id="mode">
+              <option value="followers" selected>حسب عدد المتابعين (الأشهر)</option>
+              <option value="perPost">حسب المنشورات فقط (للقياس الداخلي)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="likes">الإعجابات (آخر N منشور)</label>
+          <textarea id="likes" placeholder="اكتب أرقامًا مفصولة بفواصل أو مسافات: 120,98,150,200 ... أو اكتب مجموع الإعجابات فقط مثل: 653"></textarea>
+          <div class="hint">يمكنك إدخال قائمة أرقام أو رقم واحد يمثل المجموع.</div>
+        </div>
+
+        <div class="field">
+          <label for="comments">التعليقات (آخر N منشور)</label>
+          <textarea id="comments" placeholder="مثال: 10,8,15,20,9 أو 62"></textarea>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">احسب الآن</button>
+          <button type="button" id="clearBtn" class="btn secondary">مسح</button>
+          <button type="button" id="copyBtn" class="btn secondary">نسخ النتائج</button>
+        </div>
+
+        <p class="hint" id="validationHint" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <!-- Output -->
+    <div class="card" aria-label="النتائج" id="output" style="display:none">
+      <h2 style="margin:0 0 8px;font-size:18px">النتائج</h2>
+
+      <div class="results" aria-label="ملخص النتائج">
+        <div class="stat">
+          <strong id="engRate">0%</strong>
+          <span>معدل التفاعل</span>
+        </div>
+        <div class="stat">
+          <strong id="avgLikes">0</strong>
+          <span>متوسط الإعجابات</span>
+        </div>
+        <div class="stat">
+          <strong id="avgComments">0</strong>
+          <span>متوسط التعليقات</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="hint" id="metaLine"></p>
+      <ul class="list" id="extraStats"></ul>
+
+      <div class="divider"></div>
+
+      <h2 style="margin:0 0 6px;font-size:18px">أفضل أوقات النشر — اقتراح عام</h2>
+      <p class="hint">اقتراحات عامة. التوقيت الأدق يعتمد على Insights (نشاط المتابعين).</p>
+      <ul class="list" id="bestTimes"></ul>
+
+      <div class="divider"></div>
+
+      <h2 style="margin:0 0 6px;font-size:18px">توصيات سريعة لرفع التفاعل</h2>
+      <ol class="list" style="margin-top:8px">
+        <li>استخدم Hook قوي في أول ثانيتين (خصوصًا Reels) مع وعد واضح بالقيمة.</li>
+        <li>ثبت وتيرة نشر واقعية: 3–5 منشورات/أسبوع + قصص يوميًا.</li>
+        <li>اختبر 3 أوقات نشر لمدة أسبوعين، ثم ثبت الأفضل حسب النتائج.</li>
+        <li>تفاعل مع التعليقات خلال أول ساعة بعد النشر لرفع الانتشار.</li>
+      </ol>
+
+      <div class="divider"></div>
+
+      <div class="card" style="background:rgba(255,255,255,.02);border:1px solid var(--border);box-shadow:none">
+        <h2 style="margin:0 0 6px;font-size:18px">شرح سريع لمعدل التفاعل</h2>
+        <p class="hint" style="margin:0">
+          معدل التفاعل يقيس نسبة تفاعل الجمهور مقارنة بعدد المتابعين (أو حسب طريقة الحساب المختارة).
+          للحصول على صورة أدق، راقب أيضًا الأداء حسب نوع المحتوى (Reels/Carousel/Stories).
+        </p>
+        <details style="margin-top:10px">
+          <summary>أسئلة شائعة</summary>
+          <div style="margin-top:10px;color:var(--muted);line-height:1.9">
+            <p><strong>هل الوسيط (Median) مهم؟</strong> نعم، يقلل تأثير منشور واحد “انفجر” ورفع المتوسط.</p>
+            <p><strong>هل تشمل الأداة الحفظ والمشاركة؟</strong> لا، لأن هذه البيانات تتطلب Insights.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="card" style="background:rgba(255,255,255,.02);border:1px solid var(--border);box-shadow:none">
+        <h2 style="margin:0 0 6px;font-size:18px">أدوات أخرى قد تهمك</h2>
+        <ul class="list" style="margin-top:8px">
+          <li><a href="/tools/">كل الأدوات المجانية</a></li>
+          <li><a href="/tools/#instagram">أدوات إنستغرام</a></li>
+          <!-- سنضيف لاحقًا أداة أفضل وقت للنشر كصفحة مستقلة -->
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2>نصائح SEO سريعة لنتائج أفضل</h2>
+      <p>
+        إن كنت تستخدم الأداة لتقييم حسابك كعلامة تجارية أو مؤثر، احفظ النتائج وقارن بين أسبوعين متتاليين.
+        التحسن الحقيقي يأتي من اختبار: المحتوى + التوقيت + التفاعل المباشر.
+      </p>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<footer class="footer">
+  <div class="container">
+    <div>© 2025 MarketAPro — Free Marketing Tools</div>
+    <div style="margin-top:6px">By <a href="https://vivamediacreative.com/ar/" rel="noopener">Viva Media Creative</a></div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Helpers ----------
+  function showToast(msg){
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.style.display = 'block';
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer = setTimeout(()=>{ t.style.display='none'; }, 2200);
+  }
+
+  function parseNumbersField(str){
+    if(!str) return [];
+    const cleaned = str.trim();
+    if(!cleaned) return [];
+
+    // If looks like list (commas/spaces/newlines), parse list:
+    if (cleaned.includes(',') || /\s/.test(cleaned)) {
+      return cleaned
+        .split(/[, \n\r\t]+/)
+        .map(s => parseFloat(String(s).replace(/[^\d.]/g,'')))
+        .filter(n => !isNaN(n));
+    }
+
+    // Otherwise parse single number (could be total)
+    const v = parseFloat(cleaned.replace(/[^\d.]/g,''));
+    return isNaN(v) ? [] : [v];
+  }
+
+  function sum(arr){ return arr.reduce((a,b)=>a + (+b||0), 0); }
+
+  function median(arr){
+    if(!arr.length) return 0;
+    const a = [...arr].sort((x,y)=>x-y);
+    const mid = Math.floor(a.length/2);
+    return a.length % 2 ? a[mid] : (a[mid-1] + a[mid]) / 2;
+  }
+
+  function percentile(arr, p){
+    if(!arr.length) return 0;
+    const a = [...arr].sort((x,y)=>x-y);
+    const idx = (p/100)*(a.length-1);
+    const lo = Math.floor(idx), hi = Math.ceil(idx);
+    if(lo === hi) return a[lo];
+    const w = idx - lo;
+    return a[lo]*(1-w) + a[hi]*w;
+  }
+
+  function formatNumber(n){
+    const v = Math.round((+n||0));
+    return v.toLocaleString('ar');
+  }
+
+  function round2(n){
+    return Math.round((+n||0)*100)/100;
+  }
+
+  function suggestBestTimes(engRate){
+    const high=[
+      'الثلاثاء 18:00–21:00 — نشاط قوي غالبًا',
+      'الخميس 09:00–11:00 — مناسب للمحترفين',
+      'السبت 11:00–13:00 — وقت جيّد للانتشار'
+    ];
+    const med=[
+      'الإثنين 18:00–20:00 — مساءً بعد العمل',
+      'الأربعاء 10:00–12:00 — استراحة الصباح',
+      'الجمعة 16:00–19:00 — ما قبل نهاية الأسبوع'
+    ];
+    const low=[
+      'يوميًا 09:00–11:00 — صباحًا',
+      'يوميًا 18:00–21:00 — مساءً',
+      'اختبر الثلاثاء والخميس للحصول على نتائج أفضل'
+    ];
+    if(engRate >= 3) return high;
+    if(engRate >= 1) return med;
+    return low;
+  }
+
+  function classifyEngagement(er){
+    // تقدير عام (قد يختلف حسب المجال)
+    if(er >= 6) return {label:"ممتاز جدًا", tip:"حافظ على نفس النوع من المحتوى وكرر أفضل صيغة أداء."};
+    if(er >= 3) return {label:"جيد جدًا", tip:"اختبر Reels/Carousel أكثر وركز على Hook أقوى."};
+    if(er >= 1) return {label:"متوسط", tip:"حسّن جودة المحتوى والتوقيت والتفاعل المباشر بعد النشر."};
+    return {label:"ضعيف", tip:"ابدأ بإعادة ضبط المحتوى (Hook/قيمة/CTA) وجرّب توقيت نشر جديد."};
+  }
+
+  // ---------- Main ----------
+  const form = document.getElementById('calcForm');
+  const output = document.getElementById('output');
+  const hint = document.getElementById('validationHint');
+
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    hint.textContent = '';
+
+    const followers = parseInt(document.getElementById('followers').value || 0, 10);
+    const nposts = Math.max(1, parseInt(document.getElementById('nposts').value || 10, 10));
+    const mode = document.getElementById('mode').value;
+
+    if(!followers || followers < 1){
+      hint.textContent = 'رجاءً أدخل عدد المتابعين بشكل صحيح.';
+      return;
+    }
+
+    const likesRaw = document.getElementById('likes').value;
+    const commentsRaw = document.getElementById('comments').value;
+
+    const likesArr = parseNumbersField(likesRaw);
+    const commentsArr = parseNumbersField(commentsRaw);
+
+    // Determine totals: if single number and user didn't provide a list, treat as total
+    const likesTotal = (likesArr.length === 1 && !(likesRaw.includes(',') || /\s/.test(likesRaw.trim()))) ? likesArr[0] : sum(likesArr);
+    const commentsTotal = (commentsArr.length === 1 && !(commentsRaw.includes(',') || /\s/.test(commentsRaw.trim()))) ? commentsArr[0] : sum(commentsArr);
+
+    const avgLikes = (likesTotal / nposts) || 0;
+    const avgComments = (commentsTotal / nposts) || 0;
+
+    // Advanced stats if lists provided (and length>1)
+    const likesList = (likesArr.length > 1) ? likesArr : [];
+    const commentsList = (commentsArr.length > 1) ? commentsArr : [];
+
+    const erFollowers = ((avgLikes + avgComments) / followers) * 100;
+    const erPosts = ((avgLikes + avgComments) / Math.max(1, (avgLikes + avgComments))) * 100; // internal, not too meaningful, but keeps mode consistent
+
+    const er = (mode === 'followers') ? erFollowers : erFollowers; // keep it consistent (followers-based is the standard)
+
+    // Render primary
+    document.getElementById('engRate').textContent = round2(er) + '%';
+    document.getElementById('avgLikes').textContent = formatNumber(avgLikes);
+    document.getElementById('avgComments').textContent = formatNumber(avgComments);
+
+    // Meta line + extra stats
+    const cls = classifyEngagement(er);
+    document.getElementById('metaLine').textContent =
+      `تقييم عام: ${cls.label} — ${cls.tip}`;
+
+    const extra = document.getElementById('extraStats');
+    extra.innerHTML = '';
+
+    // Median & range if possible
+    if(likesList.length){
+      const medLikes = median(likesList);
+      const p25 = percentile(likesList, 25);
+      const p75 = percentile(likesList, 75);
+      const minL = Math.min(...likesList), maxL = Math.max(...likesList);
+
+      const li1 = document.createElement('li');
+      li1.textContent = `إعجابات — وسيط (Median): ${formatNumber(medLikes)} | أقل/أعلى: ${formatNumber(minL)} / ${formatNumber(maxL)}`;
+      extra.appendChild(li1);
+
+      const li2 = document.createElement('li');
+      li2.textContent = `إعجابات — نطاق متوازن (25%–75%): ${formatNumber(p25)} إلى ${formatNumber(p75)}`;
+      extra.appendChild(li2);
+    }
+
+    if(commentsList.length){
+      const medC = median(commentsList);
+      const minC = Math.min(...commentsList), maxC = Math.max(...commentsList);
+
+      const li3 = document.createElement('li');
+      li3.textContent = `تعليقات — وسيط (Median): ${formatNumber(medC)} | أقل/أعلى: ${formatNumber(minC)} / ${formatNumber(maxC)}`;
+      extra.appendChild(li3);
+    }
+
+    // Basic totals
+    const li4 = document.createElement('li');
+    li4.textContent = `إجمالي التفاعل (تقريبي): ${formatNumber(avgLikes + avgComments)} لكل منشور — على أساس N = ${nposts}`;
+    extra.appendChild(li4);
+
+    // Best times
+    const times = suggestBestTimes(round2(er));
+    const best = document.getElementById('bestTimes');
+    best.innerHTML = '';
+    times.forEach(t=>{
+      const li = document.createElement('li');
+      li.textContent = t;
+      best.appendChild(li);
+    });
+
+    output.style.display = 'block';
+
+    // Update URL hash for share
+    history.replaceState(null, '', '#results');
+    showToast('تم الحساب بنجاح ✅');
+  });
+
+  document.getElementById('clearBtn').addEventListener('click', ()=>{
+    document.getElementById('account').value = '';
+    document.getElementById('followers').value = '';
+    document.getElementById('nposts').value = '10';
+    document.getElementById('likes').value = '';
+    document.getElementById('comments').value = '';
+    document.getElementById('mode').value = 'followers';
+    document.getElementById('validationHint').textContent = '';
+    output.style.display = 'none';
+    history.replaceState(null, '', ' ');
+    showToast('تم المسح');
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', async ()=>{
+    const acc = document.getElementById('account').value || '(غير محدد)';
+    const followers = document.getElementById('followers').value || '(غير محدد)';
+    const nposts = document.getElementById('nposts').value || '(غير محدد)';
+    const eng = document.getElementById('engRate').textContent;
+    const al = document.getElementById('avgLikes').textContent;
+    const ac = document.getElementById('avgComments').textContent;
+
+    const txt =
+`MarketAPro — حاسبة معدل التفاعل على إنستغرام
+الحساب: ${acc}
+المتابعون: ${followers}
+عدد المنشورات (N): ${nposts}
+معدل التفاعل: ${eng}
+متوسط الإعجابات: ${al}
+متوسط التعليقات: ${ac}
+الرابط: https://marketapro.com/tools/instagram-engagement-calculator/`;
+
+    try{
+      await navigator.clipboard.writeText(txt);
+      showToast('تم نسخ النتائج ✅');
+    }catch(err){
+      alert('تعذر النسخ تلقائيًا. انسخ النص يدويًا:\n\n' + txt);
+    }
+  });
+</script>
+</body>
+</html>
