@@ -76,7 +76,54 @@
       background:rgba(0,0,0,.65);border:1px solid rgba(255,255,255,.12);
       padding:10px 12px;border-radius:14px;color:#fff;display:none;z-index:9999
     }
+
+    /* SEO block */
+    .seo-block h2, .seo-block h3 { letter-spacing: .1px; }
+    .faq { margin-top:10px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.02); border-radius:14px; padding:10px 12px; }
+    .faq summary { cursor:pointer; font-weight:900; color:rgba(255,255,255,.9); }
+    .faq p { margin:8px 0 0; }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://marketapro.com/"},
+      {"@type":"ListItem","position":2,"name":"الأدوات","item":"https://marketapro.com/tools/"},
+      {"@type":"ListItem","position":3,"name":"تحليل حساب إنستغرام","item":"https://marketapro.com/tools/instagram-profile-analyzer/"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"هل أداة تحليل حساب إنستغرام تحتاج تسجيل دخول؟",
+        "acceptedAnswer":{"@type":"Answer","text":"لا. الأداة لا تطلب تسجيل دخول ولا API. تعتمد على بيانات منشوراتك التي تُدخلها (لايكات وتعليقات وعدد متابعين)."}
+      },
+      {
+        "@type":"Question",
+        "name":"لماذا تختلف نتيجة معدل التفاعل عن أدوات أخرى؟",
+        "acceptedAnswer":{"@type":"Answer","text":"بعض الأدوات تحسب عناصر إضافية مثل الحفظ (Saves) والمشاركة (Shares) والوصول (Reach). هذه الأداة تعتمد على اللايكات والتعليقات لأنها الأكثر توفرًا بدون Insights."}
+      },
+      {
+        "@type":"Question",
+        "name":"هل ارتفاع اللايكات وحده يكفي للتعاون مع البراندات؟",
+        "acceptedAnswer":{"@type":"Answer","text":"ليس دائمًا. البراندات تهتم بالتعليقات والجودة والتفاعل الحقيقي، لأن اللايكات قد تكون سطحية. لذلك نعطيك حكمًا وخطة لزيادة التعليقات والحفظ."}
+      },
+      {
+        "@type":"Question",
+        "name":"ما أفضل خطوة بعد الحصول على التقرير؟",
+        "acceptedAnswer":{"@type":"Answer","text":"طبّق خطة 7–14 يوم التي تظهر لك، ثم أعد التحليل بعد أسبوعين وقارن النتائج."}
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -105,13 +152,13 @@
       (الأداة لا تطلب تسجيل دخول ولا API — النتائج تعتمد على بيانات منشوراتك)
     </p>
 
-    <div class="steps">
+    <div class="steps" aria-label="خطوات الأداة">
       <span class="step on" id="step1">1) إدخال اليوزر</span>
       <span class="step" id="step2">2) تأكيد البيانات</span>
       <span class="step" id="step3">3) التقرير</span>
     </div>
 
-    <form id="analyzerForm" class="grid2" style="margin-top:12px">
+    <form id="analyzerForm" class="grid2" style="margin-top:12px" novalidate>
       <div class="mini">
         <label for="username">@اسم المستخدم</label>
         <input id="username" type="text" placeholder="مثال: marketapro أو @marketapro" autocomplete="off" required />
@@ -136,14 +183,14 @@
           <span class="badge">تشخيص + خطة</span>
         </div>
 
-        <div class="loader" id="loader" aria-live="polite">
-          <div style="display:flex;gap:6px">
+        <div class="loader" id="loader" aria-live="polite" aria-busy="false">
+          <div style="display:flex;gap:6px" aria-hidden="true">
             <span class="dot"></span><span class="dot"></span><span class="dot"></span>
           </div>
           <div style="color:rgba(255,255,255,.75);font-weight:900" id="loaderText">جارٍ تجهيز التحليل…</div>
         </div>
 
-        <div class="debug" id="debugBox"></div>
+        <div class="debug" id="debugBox" role="alert"></div>
       </div>
 
       <!-- STEP 2 -->
@@ -153,7 +200,7 @@
         <div class="grid2">
           <div>
             <label for="followers">عدد المتابعين</label>
-            <input id="followers" type="number" min="1" placeholder="مثال: 12500" />
+            <input id="followers" type="number" min="1" inputmode="numeric" placeholder="مثال: 12500" />
             <p class="note2">انسخه من صفحة حسابك.</p>
           </div>
 
@@ -190,8 +237,89 @@
     </form>
   </div>
 
+  <!-- SEO CONTENT (شرح + FAQ) -->
+  <section class="card seo-block" id="seo">
+    <h2 style="margin:0 0 10px">شرح سريع: كيف يعمل تحليل حساب إنستغرام؟</h2>
+    <p class="note2" style="margin-top:0">
+      هذه الأداة تساعدك على <strong>تحليل حساب إنستغرام</strong> حسب نوعه (موديل/صانع محتوى/متجر) عبر حساب
+      <strong>معدل التفاعل الحقيقي</strong> من بيانات منشوراتك (متوسط اللايكات + متوسط التعليقات مقارنة بعدد المتابعين).
+      بعدها تحصل على <strong>حكم واضح</strong> (جاهز للتعاون/قابل للنمو/جيد للبيع) + <strong>Score</strong> وخطة تنفيذ قصيرة.
+    </p>
+
+    <div class="split">
+      <div class="mini">
+        <h3 style="margin:0 0 8px;font-size:18px">ما هو معدل التفاعل (Engagement Rate)؟</h3>
+        <p class="note2" style="margin-top:0">
+          معدل التفاعل هو مؤشر يوضح قوة المحتوى واهتمام الجمهور. غالبًا يُحسب بهذه الصيغة:
+          <strong>(متوسط الإعجابات + متوسط التعليقات) ÷ عدد المتابعين × 100</strong>.
+          كلما ارتفع المعدل بشكل منطقي مع جودة تعليقات جيدة، زادت فرص الوصول والتعاون والمبيعات.
+        </p>
+        <ul class="list">
+          <li><strong>للموديلز/الفاشن:</strong> التعليقات + الحفظ مهمان لإقناع البراندات.</li>
+          <li><strong>لصناع المحتوى:</strong> الثبات أهم من “ضربة واحدة”.</li>
+          <li><strong>للمتاجر:</strong> التفاعل لا يعني مبيعات بدون إثبات اجتماعي (Reviews/UGC).</li>
+        </ul>
+      </div>
+
+      <div class="mini">
+        <h3 style="margin:0 0 8px;font-size:18px">ما هو “المعدل الجيد” حسب نوع الحساب؟</h3>
+        <p class="note2" style="margin-top:0">لا يوجد رقم سحري واحد، لكن كمرجع سريع:</p>
+        <ul class="list">
+          <li><strong>موديل/فاشن:</strong> عادة 2.5% – 4.5% للحسابات الصغيرة والمتوسطة.</li>
+          <li><strong>صانع محتوى:</strong> عادة 1.8% – 3.8% حسب المجال والحجم.</li>
+          <li><strong>متجر:</strong> عادة 1.2% – 3.0% (يزيد مع UGC/Reviews).</li>
+        </ul>
+        <p class="note2">الأداة تعرض لك <strong>Score</strong> وحكمًا عمليًا بدل الاعتماد على رقم واحد فقط.</p>
+      </div>
+    </div>
+
+    <div class="mini" style="margin-top:12px">
+      <h3 style="margin:0 0 8px;font-size:18px">كيف ترفع التفاعل خلال 14 يوم؟ (خطة مختصرة)</h3>
+      <ol class="list" style="margin-top:0">
+        <li>ثبت <strong>توقيتين للنشر</strong> لمدة 14 يوم (لا تغيّر كل يوم).</li>
+        <li>اجعل كل منشور يحتوي <strong>CTA واحد واضح</strong> (سؤال A/B أو “احفظ”).</li>
+        <li>رد خلال <strong>أول ساعة</strong> على التعليقات لرفع الانتشار.</li>
+        <li>للمتاجر: انشر <strong>UGC/Reviews</strong> مرتين أسبوعيًا.</li>
+        <li>للموديلز: Reels “BTS + Before/After” أسبوعيًا.</li>
+      </ol>
+    </div>
+
+    <div class="mini" style="margin-top:12px">
+      <h2 style="margin:0 0 8px;font-size:20px">أسئلة شائعة (FAQ)</h2>
+
+      <details class="faq">
+        <summary>هل الأداة تتصل بإنستغرام أو تحتاج تسجيل دخول؟</summary>
+        <p class="note2">لا. الأداة لا تطلب تسجيل دخول ولا API. تعتمد على بيانات منشوراتك التي تُدخلها (لايكات وتعليقات وعدد متابعين).</p>
+      </details>
+
+      <details class="faq">
+        <summary>لماذا تختلف نتيجتي عن أدوات أخرى؟</summary>
+        <p class="note2">بعض الأدوات تحسب عناصر إضافية مثل الحفظ (Saves) والمشاركة (Shares) والوصول (Reach). هنا نعتمد على اللايكات والتعليقات لأنها الأكثر توفرًا بدون Insights.</p>
+      </details>
+
+      <details class="faq">
+        <summary>هل ارتفاع اللايكات وحده يكفي للتعاون مع البراندات؟</summary>
+        <p class="note2">ليس دائمًا. البراندات تهتم بالتعليقات والجودة والتفاعل الحقيقي، لأن اللايكات قد تكون سطحية. لذلك نعطيك “حكم” وخطة لزيادة التعليقات والحفظ.</p>
+      </details>
+
+      <details class="faq">
+        <summary>ما هي أفضل خطوة بعد الحصول على التقرير؟</summary>
+        <p class="note2">طبّق خطة 7–14 يوم التي تظهر لك، ثم أعد التحليل بعد أسبوعين وقارن النتائج.</p>
+      </details>
+    </div>
+
+    <div class="mini" style="margin-top:12px">
+      <h3 style="margin:0 0 8px;font-size:18px">روابط داخلية تساعدك أكثر</h3>
+      <ul class="list" style="margin-top:0">
+        <li><a href="/tools/best-time-to-post-instagram/">أفضل وقت للنشر على إنستغرام (أداة)</a></li>
+        <li><a href="/tools/instagram-engagement-calculator/">حاسبة معدل التفاعل (Engagement)</a></li>
+        <li><a href="/news/">مقالات التسويق والأدلة</a></li>
+      </ul>
+    </div>
+  </section>
+
   <!-- REPORT -->
-  <div class="card report" id="report">
+  <div class="card report" id="report" aria-live="polite">
     <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start">
       <div>
         <h2 style="margin:0 0 6px">التقرير النهائي</h2>
@@ -200,7 +328,7 @@
       </div>
       <div style="min-width:220px;text-align:left">
         <div style="font-weight:1000;font-size:28px;line-height:1" id="verdict">—</div>
-        <div class="meter"><div id="meterFill"></div></div>
+        <div class="meter" aria-hidden="true"><div id="meterFill"></div></div>
         <p class="note2" style="margin-top:8px" id="scoreText">—</p>
       </div>
     </div>
@@ -241,10 +369,12 @@
   <div class="container">© 2025 MarketAPro — By Viva Media Creative</div>
 </footer>
 
-<div class="toast" id="toast">تم ✅</div>
+<div class="toast" id="toast" role="status" aria-live="polite">تم ✅</div>
 
 <script>
-  const $ = (id)=>document.getElementById(id);
+  "use strict";
+
+  const $ = (id) => document.getElementById(id);
 
   function toast(msg){
     const t = $('toast');
@@ -274,26 +404,32 @@
   function sanitizeUsername(v){
     v = (v||"").trim().replace(/\s+/g,'');
     if(!v) return "";
-    if(v.startsWith("https://")) v = v.split("/").filter(Boolean).pop() || v;
+    if(v.startsWith("https://") || v.startsWith("http://")) {
+      const parts = v.split("/").filter(Boolean);
+      v = parts[parts.length - 1] || v;
+    }
     if(v.startsWith("@")) v = v.slice(1);
     v = v.replace(/[^a-zA-Z0-9._]/g,'');
     return v.toLowerCase();
   }
 
-  // قراءة أرقام ذكية (تتعامل مع 5,366 أو 5.366 كآلاف)
+  // قراءة أرقام ذكية (تتعامل مع 5,366 أو 5.366 كآلاف) + دعم الفاصلة العربية
   function parseNums(str){
     if(!str) return [];
     str = String(str).replace(/،/g, ',');
     const tokens = str.split(/[\n\r\t]+|(?:\s*,\s*)|(?:\s{2,})/);
-
     const out = [];
+
     for (let t of tokens){
       t = String(t).trim();
       if(!t) continue;
 
+      // 1,234,567
       if (/^\d{1,3}(,\d{3})+$/.test(t)) t = t.replace(/,/g,'');
+      // 1.234.567
       if (/^\d{1,3}(\.\d{3})+$/.test(t)) t = t.replace(/\./g,'');
 
+      // إزالة أي رموز غير رقمية (نسمح بالنقطة لو كانت عشريًا)
       t = t.replace(/[^\d.]/g,'');
       if(!t) continue;
 
@@ -305,7 +441,7 @@
 
   function avg(arr){
     if(!arr.length) return 0;
-    return arr.reduce((a,b)=>a+b,0)/arr.length;
+    return arr.reduce((a,b)=>a+b,0) / arr.length;
   }
 
   function clamp(n,min,max){ return Math.max(min, Math.min(max,n)); }
@@ -317,7 +453,7 @@
     return "ضعيف";
   }
 
-  function scoreColor(score){
+  function scoreGradient(score){
     if(score>=75) return "linear-gradient(135deg, rgba(34,197,94,.95), rgba(56,189,248,.65))";
     if(score>=55) return "linear-gradient(135deg, rgba(250,204,21,.95), rgba(56,189,248,.45))";
     return "linear-gradient(135deg, rgba(239,68,68,.95), rgba(56,189,248,.35))";
@@ -333,23 +469,28 @@
     const b = benchmarks(type);
     const norm = clamp((er - b.min) / (b.max - b.min), 0, 1);
     let score = Math.round(35 + norm * 60);
+
+    // commentRate هنا "نسبة مئوية" (مثال: 0.12 يعني 0.12%)
     if(commentRate >= 0.12) score += 3;
     if(commentRate < 0.05) score -= 6;
+
     return clamp(score, 0, 100);
   }
 
-  function verdictFrom(type, goal, er, commentRate){
+  function verdictFrom(type, er, commentRate){
     if(type==="model"){
       if(er>=4 && commentRate>=0.12) return "جاهز للتعاون بقوة ✅";
       if(er>=3) return "جاهز للتعاون (متوسط) ✅";
       if(er>=1.8) return "يحتاج تحسين قبل التعاون ⚠️";
       return "غير جاهز للتعاون حاليًا ❌";
     }
+
     if(type==="creator"){
       if(er>=3.5) return "قابل للنمو بسرعة ✅";
       if(er>=2.2) return "نمو جيد لكن غير ثابت ⚠️";
       return "يحتاج إعادة ضبط ❌";
     }
+
     // store
     if(er>=2.8 && commentRate>=0.08) return "جيد للبيع (مع تحسين التحويل) ✅";
     if(er>=1.6) return "متوسط — محتوى ترويجي زائد ⚠️";
@@ -525,10 +666,17 @@
   function setMeter(score){
     const fill = $('meterFill');
     fill.style.width = score + "%";
-    fill.style.background = scoreColor(score);
+    fill.style.background = scoreGradient(score);
   }
 
   function fmt(n){ return Number(n||0).toLocaleString('ar'); }
+
+  function setLoading(isLoading, text){
+    const loader = $('loader');
+    loader.style.display = isLoading ? "flex" : "none";
+    loader.setAttribute("aria-busy", String(!!isLoading));
+    if(text) $('loaderText').textContent = text;
+  }
 
   // ========= Events =========
   window.addEventListener('DOMContentLoaded', ()=>{
@@ -544,13 +692,12 @@
         return;
       }
 
-      $('loader').style.display = "flex";
-      $('loaderText').textContent = "جارٍ تجهيز التحليل…";
+      setLoading(true, "جارٍ تجهيز التحليل…");
 
-      setTimeout(()=> $('loaderText').textContent = "جارٍ تجهيز المقارنة حسب نوع الحساب…", 550);
+      setTimeout(()=> setLoading(true, "جارٍ تجهيز المقارنة حسب نوع الحساب…"), 550);
 
       setTimeout(()=>{
-        $('loader').style.display = "none";
+        setLoading(false);
         $('confirmBox').style.display = "block";
         setStep(2);
         toast("تم تجهيز التحليل — أكمل البيانات للحصول على تقرير دقيق ✅");
@@ -566,11 +713,12 @@
       $('goal').value="engagement";
       $('confirmBox').style.display="none";
       $('report').style.display="none";
-      $('loader').style.display="none";
+      setLoading(false);
       clearError();
       setStep(1);
       toast("تم المسح");
       window.scrollTo({top:0, behavior:"smooth"});
+      window.__reportText = "";
     });
 
     $('buildReportBtn').addEventListener('click', ()=>{
@@ -593,7 +741,7 @@
       const avgComments = avg(comArr);
 
       // حماية من إدخال خاطئ
-      if(avgComments > avgLikes * 0.6){
+      if(avgLikes > 0 && avgComments > avgLikes * 0.6){
         showError(
           "الأرقام تبدو غير منطقية: متوسط التعليقات مرتفع جدًا مقارنة باللايكات.\n" +
           "تأكد أنك أدخلت التعليقات كأرقام منفصلة (مثال: 12, 8, 15...) وليس رقمًا مثل 5,366."
@@ -607,7 +755,7 @@
 
       const b = benchmarks(type);
       const score = calcScore(type, er, commentRate);
-      const verdict = verdictFrom(type, goal, er, commentRate);
+      const verdict = verdictFrom(type, er, commentRate);
       const pack = diagnosisPack(type, goal, er, commentRate);
 
       $('reportTitle').textContent = `@${u} — Engagement: ${er.toFixed(2)}%`;
