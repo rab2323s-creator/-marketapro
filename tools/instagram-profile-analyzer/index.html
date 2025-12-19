@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
@@ -80,6 +80,14 @@
       color:#ffd5d5;font-weight:800;font-size:13px;
       white-space:pre-wrap
     }
+    .warn{
+      display:none;margin-top:10px;
+      border:1px solid rgba(250,204,21,.4);
+      background:rgba(250,204,21,.08);
+      padding:10px 12px;border-radius:14px;
+      color:#ffe9a6;font-weight:900;font-size:13px;
+      white-space:pre-wrap
+    }
 
     .report{display:none;margin-top:14px}
     .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
@@ -125,6 +133,32 @@
     }
     .support-cta strong{display:block;font-size:16px}
     .support-cta span{display:block;color:rgba(255,255,255,.75);font-size:13px;margin-top:6px;line-height:1.8}
+
+    /* quick help accordion */
+    .help-steps{
+      margin-top:10px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.02);
+      border-radius:14px;
+      padding:10px 12px;
+    }
+    .help-steps summary{
+      cursor:pointer;
+      font-weight:1000;
+      color:rgba(255,255,255,.92);
+    }
+    .help-steps ol{
+      margin:10px 0 0;
+      padding-right:18px;
+      color:rgba(255,255,255,.76);
+      line-height:1.9;
+      font-size:13px;
+    }
+    .help-steps code{
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.10);
+      padding:2px 6px;border-radius:10px;
+    }
   </style>
 
   <!-- ====== Structured Data ====== -->
@@ -147,7 +181,7 @@
     "name":"أداة تحليل حساب إنستغرام",
     "applicationCategory":"BusinessApplication",
     "operatingSystem":"Any",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
     "description":"أداة عربية لتحليل حساب إنستغرام: Engagement Rate + تشخيص حسب نوع الحساب + خطة 14 يوم.",
     "url":"https://marketapro.com/tools/instagram-profile-analyzer/"
   }
@@ -201,9 +235,12 @@
   <div class="card">
     <div class="tool-head">
       <div>
-        <h1 style="margin:0 0 6px;font-size:28px;line-height:1.35">
-          تحليل حساب إنستغرام الاحترافي
-        </h1>
+        <h1 style="margin:0 0 6px;font-size:28px;line-height:1.35">تحليل حساب إنستغرام الاحترافي</h1>
+
+        <!-- ✅ H2 سيو قوي داخل بداية الصفحة -->
+        <h2 style="margin:10px 0 0;font-size:16px;color:rgba(255,255,255,.86)">
+          فحص حساب إنستغرام — معدل التفاعل والتعاون والنمو والمبيعات (حسب نوع الحساب)
+        </h2>
 
         <!-- ✅ Breadcrumbs (داخل الصفحة) -->
         <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -212,7 +249,7 @@
           <span id="crumbTitle">تحليل حساب إنستغرام</span>
         </nav>
 
-        <!-- ✅ سطر ديناميكي لعرض @username داخل الصفحة (بدون تغيير Title) -->
+        <!-- ✅ سطر ديناميكي لعرض @username داخل الصفحة -->
         <p class="note2" style="margin-top:10px">
           <strong id="dynamicUserLabel" class="subtle">ابدأ بإدخال @username للحصول على تقرير مخصص.</strong><br/>
           تشخيص يتغيّر حسب نوع الحساب: <strong>موديل/فاشن</strong> — <strong>صانع محتوى</strong> — <strong>متجر</strong>.
@@ -266,11 +303,25 @@
       <div class="mini" id="confirmBox" style="grid-column:1/-1;display:none">
         <strong style="display:block;margin-bottom:8px">✅ الخطوة 2: أدخل بيانات منشوراتك (لأرقام دقيقة)</strong>
 
+        <!-- ✅ شرح سريع لجلب الأرقام -->
+        <details class="help-steps">
+          <summary>كيف أجلب الأرقام بسرعة؟ (دقيقة واحدة)</summary>
+          <ol>
+            <li>افتح إنستغرام → ادخل حسابك.</li>
+            <li>انسخ <strong>عدد المتابعين</strong> من أعلى الصفحة.</li>
+            <li>افتح آخر 6–12 منشورًا، وسجّل <strong>اللايكات</strong> و<strong>التعليقات</strong>.</li>
+            <li>يمكنك كتابة الأرقام بهذه الصيغ أيضًا: <code>1.2k</code> أو <code>12K</code> أو <code>٣٫٥k</code> أو <code>2M</code>.</li>
+            <li>الصق الأرقام مفصولة بفواصل أو أسطر.</li>
+          </ol>
+        </details>
+
+        <div class="warn" id="warnBox"></div>
+
         <div class="grid2">
           <div>
             <label for="followers">عدد المتابعين</label>
-            <input id="followers" type="number" min="1" inputmode="numeric" placeholder="مثال: 12500" />
-            <p class="note2">انسخه من صفحة حسابك.</p>
+            <input id="followers" type="text" inputmode="numeric" placeholder="مثال: 12500 أو 12.5k أو ١٢٫٥k" />
+            <p class="note2">يدعم k / ألف / M / مليون + الأرقام العربية.</p>
           </div>
 
           <div>
@@ -285,8 +336,8 @@
 
           <div class="mini" style="grid-column:1/-1">
             <label for="likesList">لايكات آخر 6–12 منشور</label>
-            <textarea id="likesList" placeholder="مثال: 700, 650, 820, 590, 760, 810"></textarea>
-            <p class="note2">افصل الأرقام بفواصل أو أسطر.</p>
+            <textarea id="likesList" placeholder="مثال: 700, 650, 820, 590, 760, 810 أو 1.2k"></textarea>
+            <p class="note2">افصل الأرقام بفواصل أو أسطر. يدعم k و الأرقام العربية.</p>
           </div>
 
           <div class="mini" style="grid-column:1/-1">
@@ -404,13 +455,12 @@
       </div>
     </div>
 
-    <!-- ✅ قسم خدمة العملاء + CTA (قبل الفوتر) -->
+    <!-- ✅ قسم خدمة العملاء + CTA -->
     <div class="support-cta">
       <div>
         <strong>تريد تقريرًا احترافيًا بدل يدوي؟</strong>
         <span>نرسل لك Audit كامل + خطة محتوى 30 يوم + تحسين Bio + أفضل توقيت نشر بناءً على بياناتك.</span>
       </div>
-      <!-- ✅ عدّل رابط التواصل -->
       <a class="btn primary" href="https://marketapro.com/contact/" rel="noopener noreferrer">تواصل معنا</a>
     </div>
 
@@ -434,7 +484,6 @@
 
 <script>
   "use strict";
-
   const $ = (id) => document.getElementById(id);
 
   function toast(msg){
@@ -444,7 +493,6 @@
     clearTimeout(window.__t);
     window.__t = setTimeout(()=>t.style.display='none', 1400);
   }
-
   function showError(msg){
     const box = $('debugBox');
     box.style.display = 'block';
@@ -455,13 +503,22 @@
     box.style.display = 'none';
     box.textContent = "";
   }
+  function showWarn(msg){
+    const w = $('warnBox');
+    w.style.display = 'block';
+    w.textContent = msg;
+  }
+  function clearWarn(){
+    const w = $('warnBox');
+    w.style.display = 'none';
+    w.textContent = "";
+  }
 
   function setStep(n){
     $('step1').classList.toggle('on', n===1);
     $('step2').classList.toggle('on', n===2);
     $('step3').classList.toggle('on', n===3);
   }
-
   function setLoading(isLoading, text){
     const loader = $('loader');
     loader.style.display = isLoading ? "flex" : "none";
@@ -481,7 +538,7 @@
     return v.toLowerCase();
   }
 
-  // ✅ يعرض اليوزر داخل الصفحة (UX قوي) بدون تغيير الـ Title
+  // ✅ يعرض اليوزر داخل الصفحة بدون تغيير الـ Title
   function renderDynamicUsername(u){
     const label = $('dynamicUserLabel');
     const crumb = $('crumbTitle');
@@ -494,19 +551,61 @@
     crumb.textContent = `تحليل حساب إنستغرام (@${u})`;
   }
 
+  // ====== Numbers parsing (Arabic digits + k/m + separators) ======
+  const AR_DIGITS = { '٠':'0','١':'1','٢':'2','٣':'3','٤':'4','٥':'5','٦':'6','٧':'7','٨':'8','٩':'9' };
+
+  function normalizeArabicDigits(s){
+    return String(s||"").replace(/[٠-٩]/g, d => AR_DIGITS[d] || d);
+  }
+
+  function normalizeDecimalSeparators(s){
+    // يدعم الفاصلة العربية والنقطة العربية
+    return String(s||"")
+      .replace(/،/g, ',')
+      .replace(/٫/g, '.')
+      .replace(/٬/g, ',');
+  }
+
+  function parseOneNumber(token){
+    if(!token) return NaN;
+    let t = normalizeDecimalSeparators(normalizeArabicDigits(token)).trim();
+    if(!t) return NaN;
+
+    // remove spaces
+    t = t.replace(/\s+/g,'');
+
+    // detect multiplier: k / ألف / m / مليون
+    let mult = 1;
+
+    // Arabic words
+    if(/ألف/.test(t)) { mult = 1000; t = t.replace(/ألف/g,''); }
+    if(/مليون/.test(t)) { mult = 1000000; t = t.replace(/مليون/g,''); }
+
+    // k/m suffix
+    if(/[kK]$/.test(t)) { mult = 1000; t = t.slice(0,-1); }
+    if(/[mM]$/.test(t)) { mult = 1000000; t = t.slice(0,-1); }
+
+    // handle 1,234,567
+    if (/^\d{1,3}(,\d{3})+(\.\d+)?$/.test(t)) t = t.replace(/,/g,'');
+    // handle 1.234.567
+    if (/^\d{1,3}(\.\d{3})+(\,\d+)?$/.test(t)) t = t.replace(/\./g,'').replace(/,/g,'.');
+
+    // keep digits + dot only
+    t = t.replace(/[^\d.]/g,'');
+    if(!t) return NaN;
+
+    const n = Number(t);
+    if(!Number.isFinite(n)) return NaN;
+    return n * mult;
+  }
+
   function parseNums(str){
     if(!str) return [];
-    str = String(str).replace(/،/g, ',');
-    const tokens = str.split(/[\n\r\t]+|(?:\s*,\s*)|(?:\s{2,})/);
+    let s = normalizeDecimalSeparators(normalizeArabicDigits(str));
+    const tokens = s.split(/[\n\r\t]+|(?:\s*,\s*)|(?:\s{2,})/);
     const out = [];
-    for (let t of tokens){
-      t = String(t).trim();
-      if(!t) continue;
-      if (/^\d{1,3}(,\d{3})+$/.test(t)) t = t.replace(/,/g,'');
-      if (/^\d{1,3}(\.\d{3})+$/.test(t)) t = t.replace(/\./g,'');
-      t = t.replace(/[^\d.]/g,'');
-      if(!t) continue;
-      const n = Number(t);
+    for (let raw of tokens){
+      const n = parseOneNumber(raw);
       if(Number.isFinite(n)) out.push(n);
     }
     return out;
@@ -653,7 +752,7 @@
 
     form.addEventListener('submit', (e)=>{
       e.preventDefault();
-      clearError();
+      clearError(); clearWarn();
 
       const u = sanitizeUsername($('username').value);
       if(!u){ showError("اكتب اسم مستخدم صحيح مثل: @marketapro"); return; }
@@ -680,7 +779,7 @@
       $('confirmBox').style.display="none";
       $('report').style.display="none";
       setLoading(false);
-      clearError();
+      clearError(); clearWarn();
       setStep(1);
       toast("تم المسح");
       renderDynamicUsername("");
@@ -689,24 +788,33 @@
     });
 
     $('buildReportBtn').addEventListener('click', ()=>{
-      clearError();
+      clearError(); clearWarn();
 
       const u = sanitizeUsername($('username').value);
       const type = $('acctType').value;
       const goal = $('goal').value;
 
-      const followers = parseInt(($('followers').value||"0"),10);
+      const followers = parseOneNumber($('followers').value);
       const likesArr = parseNums($('likesList').value);
       const comArr = parseNums($('commentsList').value);
 
       if(!u){ showError("اسم المستخدم غير صحيح."); return; }
-      if(!followers || followers < 1){ showError("أدخل عدد المتابعين."); return; }
+      if(!Number.isFinite(followers) || followers < 1){ showError("أدخل عدد المتابعين (يدعم 12.5k / ١٢٫٥k)."); return; }
       if(likesArr.length < 6){ showError("أدخل لايكات 6 منشورات على الأقل."); return; }
       if(comArr.length < 6){ showError("أدخل تعليقات 6 منشورات على الأقل."); return; }
 
-      const avgLikes = avg(likesArr);
-      const avgComments = avg(comArr);
+      // ✅ مساواة القوائم تلقائياً
+      const n = Math.min(likesArr.length, comArr.length);
+      if(likesArr.length !== comArr.length){
+        showWarn(`تنبيه: عدد اللايكات (${likesArr.length}) لا يساوي عدد التعليقات (${comArr.length}). سيتم استخدام أول ${n} منشورًا للحصول على تحليل عادل.`);
+      }
+      const likesUse = likesArr.slice(0, n);
+      const comUse = comArr.slice(0, n);
 
+      const avgLikes = avg(likesUse);
+      const avgComments = avg(comUse);
+
+      // حماية من إدخال خاطئ
       if(avgLikes > 0 && avgComments > avgLikes * 0.6){
         showError("الأرقام تبدو غير منطقية: متوسط التعليقات مرتفع جدًا مقارنة باللايكات.\nتأكد أنك أدخلت التعليقات كأرقام منفصلة (مثل: 12, 8, 15...)");
         return;
@@ -727,7 +835,7 @@
       $('scoreText').textContent = `Score: ${score}/100 — ${scoreLabel(score)}`;
       setMeter(score);
 
-      $('kFollowers').textContent = fmt(followers);
+      $('kFollowers').textContent = fmt(Math.round(followers));
       $('kAvgLikes').textContent = fmt(Math.round(avgLikes));
       $('kAvgComments').textContent = fmt(Math.round(avgComments));
       $('kER').textContent = er.toFixed(2) + "%";
@@ -749,7 +857,12 @@
       window.__reportText =
 `MarketAPro — تحليل حساب إنستغرام (@${u})
 
-المتابعون: ${followers}
+نوع الحساب: ${type==="model"?"موديل/فاشن":type==="creator"?"صانع محتوى":"متجر"}
+الهدف: ${goal==="sales"?"مبيعات/تعاونات":goal==="followers"?"زيادة المتابعين":"زيادة التفاعل"}
+
+المتابعون: ${Math.round(followers)}
+عدد المنشورات المستخدمة في التحليل: ${n}
+
 متوسط لايكات: ${Math.round(avgLikes)}
 متوسط تعليقات: ${Math.round(avgComments)}
 Engagement: ${er.toFixed(2)}%
@@ -782,3 +895,4 @@ ${pack.plan}
 </script>
 </body>
 </html>
+
