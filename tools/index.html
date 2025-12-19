@@ -15,7 +15,6 @@
   <meta property="og:description" content="أدوات عربية مجانية تساعدك على التحليل ورفع التفاعل وتحسين توقيت النشر واتخاذ قرارات مبنية على بيانات." />
   <meta property="og:url" content="https://marketapro.com/tools/" />
   <meta property="og:type" content="website" />
-  <!-- Suggestion: add a real share image -->
   <meta property="og:image" content="https://marketapro.com/assets/og-tools.jpg" />
   <meta property="og:image:alt" content="مجموعة أدوات MarketAPro المجانية" />
 
@@ -51,14 +50,14 @@
   }
   </script>
 
-  <!-- ItemList (VERY important for SEO on tool directories) -->
+  <!-- ItemList (فقط الصفحات الموجودة فعليًا) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"ItemList",
     "name":"قائمة أدوات MarketAPro المجانية",
     "itemListOrder":"https://schema.org/ItemListOrderAscending",
-    "numberOfItems":6,
+    "numberOfItems":4,
     "itemListElement":[
       {
         "@type":"ListItem","position":1,
@@ -107,197 +106,100 @@
           "description":"تحويل فوري بين العملات + سعر الصرف + تاريخ التحديث — بدون تسجيل.",
           "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}
         }
-      },
-      {
-        "@type":"ListItem","position":5,
-        "item":{
-          "@type":"WebPage",
-          "name":"محلل Bio إنستغرام (قريبًا)",
-          "url":"https://marketapro.com/tools/instagram-bio-analyzer/",
-          "description":"تحسين البايو + CTA + كلمات مفتاحية تساعد على زيادة التحويل والمتابعة."
-        }
-      },
-      {
-        "@type":"ListItem","position":6,
-        "item":{
-          "@type":"WebPage",
-          "name":"أداة تحليل Title/Description (قريبًا)",
-          "url":"https://marketapro.com/tools/meta-title-description-checker/",
-          "description":"تفحص Title/Description وتقترح تحسينات للكلمات المفتاحية ومعدل النقر."
-        }
       }
     ]
   }
   </script>
 
   <style>
-    /* تحسينات محلية خاصة بصفحة الأدوات — لا تكسر style.css */
+    /* Local CSS (خفيف جدًا) — يعتمد على متغيرات style.css */
     .hero-block{
-      padding:18px;
-      border-radius:18px;
-      border:1px solid var(--border);
+      padding:18px;border-radius:18px;border:1px solid var(--border);
       background:rgba(255,255,255,.02);
     }
     .hero-title{margin:0 0 8px;font-size:28px;line-height:1.4}
     .hero-desc{margin:0;color:var(--muted);line-height:1.9}
     .crumbs{margin-top:10px}
+
     .jump-links{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
     .jump-links a{
-      padding:8px 10px;border-radius:999px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.02);
-      font-size:13px;font-weight:900;
+      padding:8px 10px;border-radius:999px;border:1px solid var(--border);
+      background:rgba(255,255,255,.02);font-size:13px;font-weight:900;
       text-decoration:none;color:inherit;opacity:.92
     }
     .jump-links a:hover{opacity:1}
 
-    .toolbar{
-      margin-top:14px;
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:10px;
-    }
+    .toolbar{margin-top:14px;display:grid;grid-template-columns:1.2fr .8fr;gap:10px}
     @media(max-width:800px){.toolbar{grid-template-columns:1fr}}
     .search{
-      display:flex;gap:10px;align-items:center;
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:10px 12px;
-      background:rgba(255,255,255,.02);
+      display:flex;gap:10px;align-items:center;border:1px solid var(--border);
+      border-radius:14px;padding:10px 12px;background:rgba(255,255,255,.02);
     }
-    .search input{
-      width:100%;
-      background:transparent;border:none;outline:none;
-      color:var(--text);
-      font-size:14px;
-    }
+    .search input{width:100%;background:transparent;border:none;outline:none;color:var(--text);font-size:14px}
+
     .chips{display:flex;gap:8px;flex-wrap:wrap}
     .chip{
-      padding:8px 10px;border-radius:999px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.02);
-      font-size:13px;font-weight:900;
-      cursor:pointer; user-select:none;
-      opacity:.85;
-      transition:.12s ease;
+      padding:8px 10px;border-radius:999px;border:1px solid var(--border);
+      background:rgba(255,255,255,.02);font-size:13px;font-weight:900;
+      cursor:pointer;user-select:none;opacity:.85;transition:.12s ease;
     }
 
-    /* Intro SEO block */
-    .seo-block{
-      margin-top:14px;
-      padding:14px;
-      border-radius:18px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.02);
-      line-height:1.95;
-      color:var(--muted);
-    }
-    .seo-block strong{color:var(--text)}
-    .seo-block a{color:inherit}
-
-    /* أقسام الأدوات */
     .tools-group{margin-top:14px}
     .group-head{
-      padding:14px;
-      border-radius:18px;
-      border:1px solid var(--border);
+      padding:14px;border-radius:18px;border:1px solid var(--border);
       background:rgba(255,255,255,.02);
     }
     .group-head h2{margin:0 0 6px;font-size:20px;line-height:1.4}
     .group-head p{margin:0;color:var(--muted);line-height:1.9}
 
-    /* Grid */
-    .grid{
-      margin-top:12px;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-    }
+    .grid{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:520px){.grid{grid-template-columns:1fr}}
 
-    /* Card */
     .tool-card-fx{
-      border:1px solid var(--border);
-      border-radius:18px;
-      background:rgba(0,0,0,.18);
-      padding:14px;
-      display:flex;
-      flex-direction:column;
-      min-height: 252px;
-      text-decoration:none;
-      color:inherit;
-      transition:.15s ease;
+      border:1px solid var(--border);border-radius:18px;background:rgba(0,0,0,.18);
+      padding:14px;display:flex;flex-direction:column;min-height:252px;
+      text-decoration:none;color:inherit;transition:.15s ease;
     }
-    .tool-card-fx:hover{
-      transform:translateY(-2px);
-      border-color:rgba(56,189,248,.35);
-      box-shadow:0 12px 28px rgba(0,0,0,.22);
-    }
+    .tool-card-fx:hover{transform:translateY(-2px);border-color:rgba(56,189,248,.35);box-shadow:0 12px 28px rgba(0,0,0,.22)}
     .tool-card-fx h3{margin:0 0 8px;font-size:18px;line-height:1.5}
     .tool-card-fx p{margin:0;color:var(--muted);line-height:1.9}
 
-    .meta-row{
-      display:flex;gap:8px;flex-wrap:wrap;
-      color:var(--muted);
-      font-size:12px;
-      margin-bottom:10px;
-    }
-    .tag{
-      padding:5px 8px;border-radius:999px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.02);
-      font-weight:900;
-    }
+    .meta-row{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-bottom:10px}
+    .tag{padding:5px 8px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-weight:900}
     .tool-actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;padding-top:12px}
     .badge2{
-      display:inline-flex;
-      align-items:center;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.02);
-      font-weight:900;
-      font-size:13px;
+      display:inline-flex;align-items:center;padding:7px 10px;border-radius:999px;
+      border:1px solid var(--border);background:rgba(255,255,255,.02);
+      font-weight:900;font-size:13px;
     }
+
     .sub-links{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
     .sub-links a{font-size:13px;color:inherit;opacity:.9}
     .sub-links a:hover{opacity:1}
 
-    /* CTA */
     .cta{
-      margin-top:14px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.02);
-      border-radius:18px;
-      padding:14px;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      align-items:center;
-      flex-wrap:wrap;
+      margin-top:14px;border:1px solid var(--border);background:rgba(255,255,255,.02);
+      border-radius:18px;padding:14px;display:flex;justify-content:space-between;gap:10px;
+      align-items:center;flex-wrap:wrap;
     }
     .cta strong{display:block;margin-bottom:4px}
     .cta span{color:var(--muted);font-size:13px}
 
-    /* FAQ */
     .faq{
-      margin-top:14px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.02);
-      border-radius:18px;
-      padding:14px;
+      margin-top:14px;border:1px solid var(--border);background:rgba(255,255,255,.02);
+      border-radius:18px;padding:14px;
     }
     .faq h2{margin:0 0 10px;font-size:20px}
     details{
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:12px;
-      background:rgba(0,0,0,.14);
-      margin-top:10px;
+      border:1px solid var(--border);border-radius:14px;padding:12px;
+      background:rgba(0,0,0,.14);margin-top:10px;
     }
     summary{cursor:pointer;font-weight:900}
     details p{margin:10px 0 0;color:var(--muted);line-height:1.95}
+
+    /* تحسين بسيط للبحث عند التركيز */
+    .search:focus-within{border-color:rgba(56,189,248,.35)}
   </style>
 </head>
 
@@ -334,8 +236,7 @@
     </nav>
 
     <p class="hero-desc">
-      اختر الأداة المناسبة وابدأ فورًا. ستجد هنا أدوات عربية تساعدك على
-      <strong>التحليل</strong> و<strong>رفع التفاعل</strong> و<strong>تحسين توقيت النشر</strong>
+      أدوات عربية تساعدك على <strong>التحليل</strong> و<strong>رفع التفاعل</strong> و<strong>تحسين توقيت النشر</strong>
       و<strong>تحويل العملات</strong> — بدون تسجيل.
     </p>
 
@@ -350,11 +251,10 @@
     <div class="toolbar">
       <div class="search" role="search" aria-label="بحث داخل الأدوات">
         <span class="note" style="margin:0">بحث:</span>
-        <input id="q" type="search" placeholder="مثال: تحليل، معدل التفاعل، وقت النشر، تحويل عملات..." autocomplete="off" />
+        <input id="q" type="search" placeholder="مثال: تحليل، معدل التفاعل، وقت النشر، تحويل عملات..." autocomplete="off" enterkeyhint="search" />
       </div>
 
       <div class="chips" aria-label="تصنيفات الأدوات">
-        <!-- IMPORTANT: filters must match tags inside data-tags -->
         <span class="chip" data-filter="all" role="button" tabindex="0">الكل</span>
         <span class="chip" data-filter="analytics" role="button" tabindex="0">تحليل</span>
         <span class="chip" data-filter="content" role="button" tabindex="0">محتوى</span>
@@ -365,36 +265,18 @@
     </div>
   </section>
 
-  <!-- SEO supporting content (helps ranking + clarifies intent) -->
-  <section class="seo-block" aria-label="نبذة عن الأدوات">
-    <p style="margin:0">
-      <strong>لماذا هذه الصفحة مهمة؟</strong>
-      لأن أغلب المسوقين وصنّاع المحتوى يبحثون عن أدوات عملية وسريعة.
-      هنا ستجد أدوات تساعدك على <strong>قياس الأداء</strong> (مثل <a href="/tools/instagram-engagement-calculator/">حاسبة معدل التفاعل</a>)،
-      وأدوات لتشخيص الحساب ووضع <strong>خطة تحسين</strong> (مثل <a href="/tools/instagram-profile-analyzer/">تحليل حساب إنستغرام</a>)،
-      وأدوات لرفع الوصول عبر <strong>توقيت نشر قابل للاختبار</strong> (مثل <a href="/tools/best-time-to-post-instagram/">أفضل وقت للنشر</a>)،
-      بالإضافة إلى أدوات <strong>التحويل والعملات</strong> لخدمة التجارة والعمل الحر.
-      كل أداة مصممة لتكون واضحة، عربية، وتُنتج نتيجة قابلة للتنفيذ خلال دقائق.
-    </p>
-  </section>
-
-  <!-- =========================
-       Tools Sections
-  ========================== -->
+  <!-- ========================= Tools Sections ========================= -->
   <section class="tools-sections" id="tools">
 
     <!-- Analytics -->
-    <section class="tools-group" data-group="analytics" id="analytics">
+    <section class="tools-group" id="analytics" aria-label="أدوات التحليل">
       <div class="group-head">
         <h2>أدوات التحليل</h2>
         <p class="note">تقرير تفاعل، Scores، مقارنة معيارية، وتوصيات تنفيذ.</p>
       </div>
 
       <div class="grid group-grid">
-        <!-- Engagement -->
-        <a class="tool-card-fx" href="/tools/instagram-engagement-calculator/"
-           data-tags="instagram analytics"
-           aria-label="حاسبة معدل التفاعل على إنستغرام">
+        <a class="tool-card-fx" href="/tools/instagram-engagement-calculator/" data-tags="instagram analytics" aria-label="حاسبة معدل التفاعل على إنستغرام">
           <div class="meta-row">
             <span class="tag">إنستغرام</span>
             <span class="tag">تحليل</span>
@@ -404,8 +286,8 @@
           <p>احسب Engagement Rate بدقة + متوسطات وإحصاءات إضافية خلال ثوانٍ.</p>
 
           <div class="sub-links" aria-label="روابط داخلية">
-            <a href="/news/" aria-label="مقالات عن التفاعل">اقرأ: تحسين التفاعل</a>
-            <a href="/tools/instagram-profile-analyzer/" aria-label="تحليل الحساب">جرّب تحليل الحساب</a>
+            <a href="/news/">اقرأ: أدلة التحليل</a>
+            <a href="/tools/instagram-profile-analyzer/">جرّب: تحليل الحساب</a>
           </div>
 
           <div class="tool-actions">
@@ -414,10 +296,7 @@
           </div>
         </a>
 
-        <!-- Profile Analyzer -->
-        <a class="tool-card-fx" href="/tools/instagram-profile-analyzer/"
-           data-tags="instagram analytics"
-           aria-label="تحليل حساب إنستغرام">
+        <a class="tool-card-fx" href="/tools/instagram-profile-analyzer/" data-tags="instagram analytics" aria-label="تحليل حساب إنستغرام">
           <div class="meta-row">
             <span class="tag">إنستغرام</span>
             <span class="tag">تحليل</span>
@@ -427,8 +306,8 @@
           <p>Score + معدل التفاعل + تشخيص حسب نوع الحساب + خطة 7–14 يوم.</p>
 
           <div class="sub-links" aria-label="روابط داخلية">
-            <a href="/tools/best-time-to-post-instagram/" aria-label="أفضل وقت للنشر">اختبر: وقت النشر</a>
-            <a href="/news/" aria-label="مقالات عن الإنستغرام">اقرأ: نمو إنستغرام</a>
+            <a href="/tools/best-time-to-post-instagram/">اختبر: وقت النشر</a>
+            <a href="/news/">اقرأ: نمو إنستغرام</a>
           </div>
 
           <div class="tool-actions">
@@ -440,17 +319,14 @@
     </section>
 
     <!-- Content -->
-    <section class="tools-group" data-group="content" id="content-tools">
+    <section class="tools-group" id="content-tools" aria-label="أدوات المحتوى">
       <div class="group-head">
         <h2>أدوات المحتوى</h2>
         <p class="note">توقيت النشر، تحسين الوصول، وخطة اختبار عملية.</p>
       </div>
 
       <div class="grid group-grid">
-        <!-- Best time -->
-        <a class="tool-card-fx" href="/tools/best-time-to-post-instagram/"
-           data-tags="instagram content"
-           aria-label="أفضل وقت للنشر على إنستغرام">
+        <a class="tool-card-fx" href="/tools/best-time-to-post-instagram/" data-tags="instagram content" aria-label="أفضل وقت للنشر على إنستغرام">
           <div class="meta-row">
             <span class="tag">إنستغرام</span>
             <span class="tag">محتوى</span>
@@ -460,8 +336,8 @@
           <p>اقتراحات حسب البلد والهدف ونوع المحتوى + ملخص جاهز للنسخ.</p>
 
           <div class="sub-links" aria-label="روابط داخلية">
-            <a href="/tools/instagram-engagement-calculator/" aria-label="حاسبة التفاعل">قيّم: معدل التفاعل</a>
-            <a href="/news/" aria-label="مقالات عن الريلز">اقرأ: أفكار محتوى</a>
+            <a href="/tools/instagram-engagement-calculator/">قيّم: التفاعل</a>
+            <a href="/news/">اقرأ: أفكار محتوى</a>
           </div>
 
           <div class="tool-actions">
@@ -470,10 +346,8 @@
           </div>
         </a>
 
-        <!-- Coming soon -> link to a real page (recommended for SEO) -->
-        <a class="tool-card-fx" href="/tools/instagram-bio-analyzer/"
-           data-tags="instagram content seo"
-           aria-label="محلل Bio إنستغرام">
+        <!-- قريبًا: نخليها div (بدون رابط) عشان ما نرسل زائر/جوجل لصفحة غير موجودة -->
+        <div class="tool-card-fx" data-tags="instagram content seo" role="article" aria-label="محلل Bio إنستغرام - قريبًا">
           <div class="meta-row">
             <span class="tag">إنستغرام</span>
             <span class="tag">SEO</span>
@@ -482,24 +356,21 @@
           <h3>محلل Bio إنستغرام</h3>
           <p>تحسين البايو + CTA + كلمات مفتاحية تساعد على زيادة التحويل والمتابعة.</p>
           <div class="tool-actions">
-            <span class="badge2">افتح صفحة الأداة</span>
-            <span class="badge2" style="opacity:.85">قريبًا</span>
+            <span class="badge2">قريبًا</span>
           </div>
-        </a>
+        </div>
       </div>
     </section>
 
     <!-- SEO -->
-    <section class="tools-group" data-group="seo" id="seo-tools">
+    <section class="tools-group" id="seo-tools" aria-label="أدوات SEO">
       <div class="group-head">
         <h2>أدوات SEO</h2>
         <p class="note">أدوات لتحسين الظهور وجلب زيارات عضوية (سنضيف المزيد قريبًا).</p>
       </div>
 
       <div class="grid group-grid">
-        <a class="tool-card-fx" href="/tools/meta-title-description-checker/"
-           data-tags="seo"
-           aria-label="أداة تحليل عنوان ووصف">
+        <div class="tool-card-fx" data-tags="seo" role="article" aria-label="أداة Title/Description - قريبًا">
           <div class="meta-row">
             <span class="tag">SEO</span>
             <span class="tag">قريبًا</span>
@@ -507,24 +378,21 @@
           <h3>أداة تحليل Title + Description</h3>
           <p>تفحص Title/Description وتقترح تحسينات للكلمات المفتاحية ومعدل النقر (CTR).</p>
           <div class="tool-actions">
-            <span class="badge2">افتح صفحة الأداة</span>
-            <span class="badge2" style="opacity:.85">قريبًا</span>
+            <span class="badge2">قريبًا</span>
           </div>
-        </a>
+        </div>
       </div>
     </section>
 
     <!-- Finance -->
-    <section class="tools-group" data-group="finance" id="finance">
+    <section class="tools-group" id="finance" aria-label="أدوات التحويل والعملات">
       <div class="group-head">
-        <h2>أدوات المال والتحويل</h2>
-        <p class="note">تحويل العملات وأسعار الصرف — عليها طلب كبير.</p>
+        <h2>التحويل والعملات</h2>
+        <p class="note">حاسبة تحويل العملات — عليها طلب كبير ومناسبة للتجارة والعمل الحر.</p>
       </div>
 
       <div class="grid group-grid">
-        <a class="tool-card-fx" href="/tools/currency-converter/"
-           data-tags="finance analytics seo"
-           aria-label="حاسبة تحويل العملات">
+        <a class="tool-card-fx" href="/tools/currency-converter/" data-tags="finance analytics seo" aria-label="حاسبة تحويل العملات">
           <div class="meta-row">
             <span class="tag">تحويل</span>
             <span class="tag">طلب عالي</span>
@@ -532,10 +400,6 @@
           </div>
           <h3>حاسبة تحويل العملات</h3>
           <p>تحويل فوري بين العملات + سعر الصرف + تاريخ التحديث — بدون تسجيل.</p>
-
-          <div class="sub-links" aria-label="روابط داخلية">
-            <a href="/news/" aria-label="مقالات عن التجارة">اقرأ: تسويق وتجارة</a>
-          </div>
 
           <div class="tool-actions">
             <span class="badge2">جرّب الأداة</span>
@@ -560,23 +424,23 @@
     </a>
   </section>
 
-  <!-- FAQ (adds topical coverage + can win rich results) -->
+  <!-- FAQ -->
   <section class="faq" id="faq" aria-label="الأسئلة الشائعة">
     <h2>الأسئلة الشائعة</h2>
 
     <details>
-      <summary>هل الأدوات مجانية فعلاً؟ وهل تحتاج تسجيل؟</summary>
-      <p>نعم. الأدوات مصممة لتعمل فورًا وبدون تسجيل. بعض الأدوات قد تقترح خطوات تنفيذية أو قوالب جاهزة للنسخ.</p>
+      <summary>هل الأدوات مجانية فعلًا؟ وهل تحتاج تسجيل؟</summary>
+      <p>نعم. الأدوات مصممة لتعمل فورًا وبدون تسجيل.</p>
     </details>
 
     <details>
-      <summary>كيف أستخدم النتائج لتحسين حساب إنستغرام؟</summary>
-      <p>ابدأ بحاسبة معدل التفاعل لمعرفة وضعك الحالي، ثم استخدم تحليل الحساب للحصول على تشخيص وخطة 7–14 يوم، وبعدها اختبر أفضل وقت للنشر لمدة أسبوعين لتأكيد النتائج بالأرقام.</p>
+      <summary>كيف أستخدم الأدوات لتحسين حساب إنستغرام؟</summary>
+      <p>ابدأ بحاسبة معدل التفاعل، ثم استخدم تحليل الحساب للحصول على تشخيص وخطة 7–14 يوم، وبعدها اختبر أفضل وقت للنشر لمدة أسبوعين لتأكيد النتائج بالأرقام.</p>
     </details>
 
     <details>
-      <summary>هل نتائج "أفضل وقت للنشر" ثابتة لكل الناس؟</summary>
-      <p>لا. هي توصيات بداية قوية، لكن الأفضل دائمًا اختبارها على حسابك ومقارنة الوصول والتفاعل خلال 2–3 أسابيع للوصول إلى توقيتك المثالي.</p>
+      <summary>هل نتائج أفضل وقت للنشر ثابتة للجميع؟</summary>
+      <p>لا. هي توصيات كبداية، لكن الأفضل دائمًا اختبارها على حسابك ومقارنة الوصول والتفاعل لمدة 2–3 أسابيع.</p>
     </details>
   </section>
 
@@ -586,21 +450,9 @@
     "@context":"https://schema.org",
     "@type":"FAQPage",
     "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"هل الأدوات مجانية فعلاً؟ وهل تحتاج تسجيل؟",
-        "acceptedAnswer":{"@type":"Answer","text":"نعم. الأدوات مصممة لتعمل فورًا وبدون تسجيل. بعض الأدوات قد تقترح خطوات تنفيذية أو قوالب جاهزة للنسخ."}
-      },
-      {
-        "@type":"Question",
-        "name":"كيف أستخدم النتائج لتحسين حساب إنستغرام؟",
-        "acceptedAnswer":{"@type":"Answer","text":"ابدأ بحاسبة معدل التفاعل لمعرفة وضعك الحالي، ثم استخدم تحليل الحساب للحصول على تشخيص وخطة 7–14 يوم، وبعدها اختبر أفضل وقت للنشر لمدة أسبوعين لتأكيد النتائج بالأرقام."}
-      },
-      {
-        "@type":"Question",
-        "name":"هل نتائج أفضل وقت للنشر ثابتة لكل الناس؟",
-        "acceptedAnswer":{"@type":"Answer","text":"لا. هي توصيات بداية قوية، لكن الأفضل دائمًا اختبارها على حسابك ومقارنة الوصول والتفاعل خلال 2–3 أسابيع للوصول إلى توقيتك المثالي."}
-      }
+      {"@type":"Question","name":"هل الأدوات مجانية فعلًا؟ وهل تحتاج تسجيل؟","acceptedAnswer":{"@type":"Answer","text":"نعم. الأدوات مصممة لتعمل فورًا وبدون تسجيل."}},
+      {"@type":"Question","name":"كيف أستخدم الأدوات لتحسين حساب إنستغرام؟","acceptedAnswer":{"@type":"Answer","text":"ابدأ بحاسبة معدل التفاعل، ثم استخدم تحليل الحساب للحصول على تشخيص وخطة 7–14 يوم، وبعدها اختبر أفضل وقت للنشر لمدة أسبوعين لتأكيد النتائج بالأرقام."}},
+      {"@type":"Question","name":"هل نتائج أفضل وقت للنشر ثابتة للجميع؟","acceptedAnswer":{"@type":"Answer","text":"لا. هي توصيات كبداية، لكن الأفضل دائمًا اختبارها على حسابك ومقارنة الوصول والتفاعل لمدة 2–3 أسابيع."}}
     ]
   }
   </script>
@@ -618,55 +470,63 @@
   </div>
 </footer>
 
-<script>
-  // بحث + فلترة مع إخفاء الأقسام الفارغة
+<script defer>
+  // بحث + فلترة + إخفاء الأقسام الفارغة (مُحسّن أداء)
   const q = document.getElementById('q');
-  const chips = [...document.querySelectorAll('.chip')];
-  const cards = [...document.querySelectorAll('#tools [data-tags]')];
-  const groups = [...document.querySelectorAll('#tools .tools-group')];
+  const chips = Array.from(document.querySelectorAll('.chip'));
+  const cards = Array.from(document.querySelectorAll('#tools [data-tags]'));
+  const groups = Array.from(document.querySelectorAll('#tools .tools-group'));
 
   let activeFilter = 'all';
+
+  function setActiveChip(el){
+    chips.forEach(x => x.style.opacity = '0.85');
+    el.style.opacity = '1';
+  }
+
+  function matchesFilter(tags, filter){
+    if(filter === 'all') return true;
+    // tags: "instagram analytics" -> ["instagram","analytics"]
+    const t = (tags || '').toLowerCase().trim().split(/\s+/);
+    return t.includes(filter);
+  }
 
   function apply(){
     const term = (q.value || '').trim().toLowerCase();
 
-    cards.forEach(card=>{
-      const text = (card.innerText || '').toLowerCase();
-      const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+    // فلترة البطاقات
+    for (const card of cards){
+      const tags = card.getAttribute('data-tags') || '';
+      const text = (card.textContent || '').toLowerCase(); // أسرع من innerText
+      const okTerm = !term || text.includes(term);
+      const okFilter = matchesFilter(tags, activeFilter);
+      card.style.display = (okTerm && okFilter) ? '' : 'none';
+    }
 
-      const matchesTerm = !term || text.includes(term);
-      const matchesFilter = (activeFilter === 'all') || tags.split(/\s+/).includes(activeFilter);
-
-      card.style.display = (matchesTerm && matchesFilter) ? '' : 'none';
-    });
-
-    groups.forEach(g=>{
-      const visible = [...g.querySelectorAll('[data-tags]')].some(c => c.style.display !== 'none');
+    // إخفاء الأقسام الفارغة
+    for (const g of groups){
+      const visible = Array.from(g.querySelectorAll('[data-tags]')).some(c => c.style.display !== 'none');
       g.style.display = visible ? '' : 'none';
-    });
-  }
-
-  function setActiveChip(el){
-    chips.forEach(x=>x.style.opacity = '0.85');
-    el.style.opacity = '1';
+    }
   }
 
   q.addEventListener('input', apply);
 
-  chips.forEach(c=>{
-    c.addEventListener('click', ()=>{
+  for (const c of chips){
+    c.addEventListener('click', () => {
       activeFilter = c.getAttribute('data-filter') || 'all';
       setActiveChip(c);
       apply();
     });
-    // accessibility: enter/space activates
-    c.addEventListener('keydown', (e)=>{
+
+    // Accessibility: Enter/Space
+    c.addEventListener('keydown', (e) => {
       if(e.key === 'Enter' || e.key === ' '){
         e.preventDefault();
         c.click();
       }
     });
-  });
+  }
 
   // default
   setActiveChip(chips[0]);
