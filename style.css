@@ -157,6 +157,16 @@ li{margin:6px 0;color:var(--muted);line-height:1.9}
   .nav::-webkit-scrollbar{height:6px}
   .nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,.10);border-radius:999px}
 }
+.brand-logo-wrap{
+  display:flex;
+  flex-direction:column;
+}
+
+.site-logo{
+  height:36px;   /* عدّل حسب الذوق */
+  width:auto;
+  display:block;
+}
 
 /* =========================
    Cards / Sections
