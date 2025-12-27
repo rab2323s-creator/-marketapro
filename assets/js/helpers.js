@@ -1,4 +1,4 @@
-(function () {
+ (function () {
   const NS = "mkt";
 
   function now() { return Date.now(); }
