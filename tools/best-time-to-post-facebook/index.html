@@ -400,6 +400,51 @@
       <h3 style="margin:14px 0 6px;font-size:16px">أوقات إضافية للاختبار + اقتراحات ذكية</h3>
       <ul class="list" id="extraTimes"></ul>
 
+      <!-- ✅ NEW: Stronger results (reasons + KPIs + plan + ICS) -->
+      <div class="divider"></div>
+
+      <h3 style="margin:0 0 6px;font-size:16px">لماذا هذه الأوقات؟</h3>
+      <ul class="list" id="reasons"></ul>
+
+      <div class="divider"></div>
+
+      <h3 style="margin:0 0 6px;font-size:16px">خطة أسبوع جاهزة + تصدير تقويم</h3>
+      <p class="hint" style="margin:0 0 10px">
+        أنشئ خطة تلقائية بناءً على أفضل 3 أوقات، ثم حمّلها كملف تقويم (ICS) أو انسخها.
+      </p>
+
+      <div class="row">
+        <div class="field">
+          <label for="planDays">عدد الأيام</label>
+          <select id="planDays">
+            <option value="7" selected>7 أيام</option>
+            <option value="14">14 يوم</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="planStart">تاريخ البداية</label>
+          <input id="planStart" type="date">
+          <div class="hint">إن تركته فارغًا سنبدأ من اليوم.</div>
+        </div>
+      </div>
+
+      <div class="actions" style="margin-top:10px">
+        <button type="button" class="btn primary" id="buildPlanBtn">أنشئ الخطة</button>
+        <button type="button" class="btn secondary" id="copyPlanBtn">نسخ الخطة</button>
+        <button type="button" class="btn secondary" id="downloadIcsBtn">تحميل تقويم (ICS)</button>
+      </div>
+
+      <div class="noteBox" style="margin-top:10px;display:none" id="planBox">
+        <strong>الخطة:</strong>
+        <ul class="list" id="planList" style="margin-top:8px"></ul>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3 style="margin:0 0 6px;font-size:16px">ماذا تراقب في Insights؟</h3>
+      <ul class="list" id="kpis"></ul>
+      <!-- ✅ END NEW -->
+
       <div class="divider"></div>
 
       <h3 style="margin:0 0 6px;font-size:16px">خطة اختبار سريعة (14 يوم)</h3>
@@ -519,8 +564,12 @@
     <div style="margin-top:6px">By <a href="https://vivamediacreative.com/ar/" rel="noopener">Viva Media Creative</a></div>
   </div>
 </footer>
+
 <script src="/assets/js/helpers.js" defer></script>
 <script src="./best-time-to-post-facebook.js" defer></script>
+<!-- ✅ NEW: enhancement script (we will create it next) -->
+<script src="./best-time-to-post-facebook.pro.js" defer></script>
+
 </body>
 </html>
 
