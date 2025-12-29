@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "2026-gold-price-outlook",
+    "title": "توقعات أسعار الذهب 2026: آفاق السعر + العوامل المؤثرة + حاسبة العيارات",
+    "description": "مرجع شامل لتوقعات الذهب في 2026: تأثير الدولار، الفائدة، التضخم ومشتريات البنوك المركزية على السعر.",
+    "date": "2025-12-15",
+    "category": "gold",
+    "tags": ["gold", "xauusd", "economy"],
+    "badges": ["ذهب", "توقعات 2026", "تحليل اقتصادي"],
+    "image": "/assets/gold-forecast-2026.jpg",
+    "reading": "10–14 دقيقة",
+    "toolUrl": "/tools/gold-price/"
+  },
+  {
+    "slug": "usd-to-egp-today",
+    "title": "تحويل الدولار إلى الجنيه المصري اليوم (USD → EGP) | دليل + أداة مجانية",
+    "description": "كيفية تحويل USD إلى EGP مع أمثلة (10–100–1000 دولار) ونصائح لتجنب أخطاء التحويل.",
+    "date": "2025-11-20",
+    "category": "currency",
+    "tags": ["usd", "egp", "currency"],
+    "badges": ["تحويل عملات", "مصر", "USD→EGP"],
+    "image": "/assets/currency-converter-usd-egp.jpg",
+    "reading": "6–8 دقائق",
+    "toolUrl": "/tools/currency-converter/"
+  },
+  {
+    "slug": "best-time-to-post-instagram",
+    "title": "أفضل وقت للنشر على إنستغرام: دليل عملي لزيادة التفاعل (2025)",
+    "description": "كيف تختار توقيت النشر حسب بلد جمهورك ونوع المحتوى، مع خطة اختبار 14 يوم.",
+    "date": "2025-10-05",
+    "category": "social",
+    "tags": ["instagram", "social"],
+    "badges": ["إنستغرام", "سوشال ميديا"],
+    "image": "/assets/og-best-time-instagram.jpg",
+    "reading": "5–7 دقائق",
+    "toolUrl": "/tools/best-time-to-post-instagram/"
+  },
+  {
+    "slug": "google-ads-keywords-guide",
+    "title": "Google Ads: كيفية اختيار الكلمات المفتاحية وتقليل تكلفة النقرة",
+    "description": "خطوات عملية لاختيار Keywords، تحسين الجودة، وتقليل CPC بدون تخمين.",
+    "date": "2025-09-01",
+    "category": "google-ads",
+    "tags": ["google-ads", "ppc"],
+    "badges": ["Google Ads", "PPC"],
+    "image": "/assets/og-best-time-facebook.jpg",
+    "reading": "7–10 دقائق",
+    "toolUrl": "/tools/"
+  }
+]
