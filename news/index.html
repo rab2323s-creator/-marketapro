@@ -1,40 +1,31 @@
- <!doctype html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>مقالات التسويق وأدلة الأدوات المجانية | MarketAPro</title>
-  <meta name="description" content="مقالات وأدلة عملية تساعدك على فهم التسويق الرقمي وتحليل إنستغرام وتحسين التفاعل. اكتشف الأدوات المجانية من MarketAPro مع شروحات واضحة قابلة للتطبيق." />
-  <meta name="keywords" content="مقالات التسويق, دليل التسويق الرقمي, تحسين التفاعل, تحليل انستغرام, engagement rate, افضل وقت للنشر, أدوات تسويق مجانية, تحويل عملات, محول عملات, دولار لجنيه" />
-
+  <title>المقالات | MarketAPro</title>
+  <meta name="description" content="مكتبة مقالات MarketAPro: سيو، إعلانات ممولة، جوجل أدز، تسويق، سوشال ميديا، تصميم مواقع… بالإضافة إلى الذهب والعملات والعملات الرقمية." />
   <link rel="canonical" href="https://marketapro.com/news/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="مقالات التسويق وأدلة الأدوات المجانية | MarketAPro" />
-  <meta property="og:description" content="أدلة عملية + أدوات مجانية لتحسين نتائجك على السوشال ميديا، مع مقالات تساعدك على اتخاذ قرارات مبنية على بيانات." />
+  <meta property="og:title" content="المقالات | MarketAPro" />
+  <meta property="og:description" content="أقسام مقالات منظمة + أدلة عملية + أدوات مجانية مرتبطة بكل موضوع." />
   <meta property="og:url" content="https://marketapro.com/news/" />
   <meta property="og:type" content="website" />
-  <!-- <meta property="og:image" content="https://marketapro.com/assets/og-news.jpg" /> -->
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <!-- <meta name="twitter:image" content="https://marketapro.com/assets/og-news.jpg" /> -->
 
   <link rel="stylesheet" href="/style.css" />
 
-  <!-- CollectionPage Schema -->
+  <!-- CollectionPage + Breadcrumb (اختياري) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"CollectionPage",
-    "name":"مقالات التسويق وأدلة الأدوات المجانية",
+    "name":"المقالات",
     "url":"https://marketapro.com/news/",
-    "description":"مقالات وأدلة عملية تساعدك على فهم التسويق الرقمي وتحليل إنستغرام وتحسين التفاعل باستخدام أدوات مجانية.",
     "publisher":{"@type":"Organization","name":"MarketAPro","url":"https://marketapro.com/"}
   }
   </script>
 
-  <!-- Breadcrumb Schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -46,8 +37,9 @@
   }
   </script>
 
+  <script type="application/ld+json" id="itemlist-schema"></script>
+
   <style>
-    /* تحسينات شكلية خاصة بصفحة المقالات */
     .hero-block{
       padding:18px;
       border-radius:18px;
@@ -56,7 +48,6 @@
     }
     .hero-title{margin:0 0 8px;font-size:28px;line-height:1.4}
     .hero-desc{margin:0;color:var(--muted);line-height:1.9}
-    .crumbs{margin-top:10px}
     .toolbar{
       margin-top:14px;
       display:grid;
@@ -89,13 +80,19 @@
     }
     .chip:hover{opacity:1}
 
-    /* أقسام المقالات */
     .section-block{
       margin-top:14px;
       padding:14px;
       border-radius:18px;
       border:1px solid var(--border);
       background:rgba(255,255,255,.02);
+    }
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:10px;
+      flex-wrap:wrap;
     }
     .section-block h2{margin:0 0 6px;font-size:20px;line-height:1.4}
     .section-block p{margin:0;color:var(--muted);line-height:1.9}
@@ -151,6 +148,8 @@
     }
     .cta strong{display:block;margin-bottom:4px}
     .cta span{color:var(--muted);font-size:13px}
+
+    .sub-actions{display:flex;gap:10px;flex-wrap:wrap}
   </style>
 </head>
 
@@ -178,7 +177,7 @@
 <main class="container section" id="content">
 
   <section class="hero-block">
-    <h1 class="hero-title">مقالات التسويق وأدلة الأدوات المجانية</h1>
+    <h1 class="hero-title">مكتبة مقالات MarketAPro</h1>
 
     <nav aria-label="Breadcrumb" class="note crumbs">
       <a href="/">الرئيسية</a> ←
@@ -186,450 +185,45 @@
     </nav>
 
     <p class="hero-desc">
-      هنا تجد مقالات عملية تساعدك على <strong>تحليل إنستغرام</strong>، فهم <strong>معدل التفاعل (Engagement Rate)</strong>،
-      واختيار <strong>أفضل وقت للنشر</strong> — ومع الوقت ستجد أيضًا أدلة <strong>تحويل العملات</strong> للتجارة والعمل الحر.
+      اختر القسم الذي تحتاجه: <strong>SEO</strong>، <strong>إعلانات ممولة</strong>، <strong>Google Ads</strong>،
+      <strong>سوشال ميديا</strong>… أو أقسام الاقتصاد مثل <strong>الذهب</strong> و<strong>العملات</strong>.
+      في كل قسم ستجد أدلة عملية + روابط لأدوات مجانية تساعدك على التنفيذ فورًا.
     </p>
 
     <div class="toolbar">
       <div class="search" role="search" aria-label="بحث داخل المقالات">
         <span class="note" style="margin:0">بحث:</span>
-        <input id="q" type="search" placeholder="مثال: معدل التفاعل، أفضل وقت للنشر، تحويل عملات، دولار لجنيه..." autocomplete="off" />
+        <input id="q" type="search" placeholder="ابحث: سيو، إعلانات ممولة، جوجل أدز، ذهب، دولار لجنيه..." autocomplete="off" />
       </div>
 
-      <div class="chips" aria-label="تصنيفات المقالات">
+      <div class="chips" aria-label="تصفية حسب القسم">
         <span class="chip" data-filter="all" role="button" tabindex="0">الكل</span>
-        <span class="chip" data-filter="instagram" role="button" tabindex="0">إنستغرام</span>
-        <span class="chip" data-filter="analytics" role="button" tabindex="0">تحليل وبيانات</span>
+        <!-- سيتم حقن باقي الأقسام تلقائيًا من JS -->
         <span class="chip" data-filter="seo" role="button" tabindex="0">SEO</span>
-        <span class="chip" data-filter="finance" role="button" tabindex="0">تحويل العملات</span>
-        <span class="chip" data-filter="egypt" role="button" tabindex="0">مصر</span>
+        <span class="chip" data-filter="paid-ads" role="button" tabindex="0">إعلانات ممولة</span>
+        <span class="chip" data-filter="google-ads" role="button" tabindex="0">Google Ads</span>
+        <span class="chip" data-filter="social" role="button" tabindex="0">سوشال ميديا</span>
+        <span class="chip" data-filter="gold" role="button" tabindex="0">الذهب</span>
+        <span class="chip" data-filter="currency" role="button" tabindex="0">العملات</span>
+        <span class="chip" data-filter="crypto" role="button" tabindex="0">كريبتو</span>
       </div>
     </div>
   </section>
 
-  <!-- CTA سريع (يعزز النقرات للأدوات) -->
   <section class="cta" aria-label="جرّب الأدوات مباشرة">
     <div>
       <strong>تريد نتيجة سريعة؟ جرّب الأدوات الآن</strong>
-      <span>محول العملات + أفضل وقت للنشر + حاسبة التفاعل — بدون تسجيل.</span>
+      <span>أدوات مجانية للتسويق والتحليل والتحويل — بدون تسجيل.</span>
     </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <a class="btn primary" href="/tools/currency-converter/">جرّب محول العملات</a>
-      <a class="btn secondary" href="/tools/" style="margin-inline-start:8px">كل الأدوات</a>
+    <div class="sub-actions">
+      <a class="btn primary" href="/tools/">كل الأدوات</a>
+      <a class="btn secondary" href="/tools/currency-converter/">محول العملات</a>
     </div>
   </section>
 
-  <!-- =========================
-       Section 1: Marketing / Instagram
-  ========================== -->
-  <section class="posts-group" id="group-marketing">
-    <div class="section-block">
-      <h2>مقالات التسويق وإنستغرام</h2>
-      <p class="note">أدلة عملية لتحسين التفاعل والوصول + روابط مباشرة لأدوات مجانية تساعدك على التنفيذ فورًا.</p>
-    </div>
+  <!-- هنا سيتم بناء الأقسام + المقالات تلقائيًا -->
+  <div id="sections"></div>
 
-    <section class="grid" aria-label="مقالات التسويق وإنستغرام" id="posts-marketing">
-      <!-- المقال 1 -->
-      <article class="post-card" data-tags="instagram analytics">
-        <img src="/assets/instagram-engagement.jpg" alt="كيف تحسب معدل التفاعل على إنستغرام؟" loading="lazy" />
-        <div class="post-body">
-          <div class="post-meta">
-            <span class="tag">إنستغرام</span>
-            <span class="tag">تحليل</span>
-            <span>مدة القراءة: 5–7 دقائق</span>
-          </div>
-          <h3>
-            <a href="/news/instagram-engagement-rate-calculator/">
-              كيف تحسب معدل التفاعل على إنستغرام؟ (دليل شامل + أداة مجانية)
-            </a>
-          </h3>
-          <p>
-            تعلّم طريقة حساب Engagement Rate خطوة بخطوة، ما هو المعدل الجيد،
-            ولماذا معدل التفاعل أهم من عدد المتابعين — مع أداة مجانية للحساب خلال ثوانٍ.
-          </p>
-        </div>
-        <div class="post-footer">
-          <a class="btn primary" href="/news/instagram-engagement-rate-calculator/">اقرأ الدليل</a>
-          <a class="btn secondary" href="/tools/instagram-engagement-calculator/" style="margin-inline-start:8px">جرّب الأداة</a>
-        </div>
-      </article>
-
-      <!-- المقال 2 -->
-      <article class="post-card" data-tags="instagram seo">
-        <img src="/assets/og-best-time-instagram.jpg" alt="أفضل وقت للنشر على إنستغرام" loading="lazy" />
-        <div class="post-body">
-          <div class="post-meta">
-            <span class="tag">إنستغرام</span>
-            <span class="tag">SEO</span>
-            <span>مدة القراءة: 5–7 دقائق</span>
-          </div>
-
-          <h3>
-            <a href="/news/best-time-to-post-instagram/">
-              أفضل وقت للنشر على إنستغرام: دليل عملي لزيادة التفاعل (2025)
-            </a>
-          </h3>
-
-          <p>
-            دليل عملي يشرح كيف تختار توقيت النشر حسب بلد جمهورك ونوع المحتوى، مع خطة اختبار 14 يوم لتثبيت أفضل وقتين بناءً على النتائج.
-          </p>
-        </div>
-
-        <div class="post-footer">
-          <a class="btn primary" href="/news/best-time-to-post-instagram/">اقرأ الدليل</a>
-          <a class="btn secondary" href="/tools/best-time-to-post-instagram/" style="margin-inline-start:8px">جرّب الأداة</a>
-        </div>
-      </article>
-     
-      <!-- المقال 3 -->
-
-  <article class="post-card" data-tags="facebook meta seo">
-  <img src="/assets/og-best-time-facebook.jpg" alt="أفضل وقت للنشر على فيس بوك" loading="lazy" />
-  <div class="post-body">
-    <div class="post-meta">
-      <span class="tag">فيس بوك</span>
-      <span class="tag">Meta</span>
-      <span class="tag">SEO</span>
-      <span>مدة القراءة: 7–10 دقائق</span>
-    </div>
-
-    <h3>
-      <a href="/news/best-time-to-post-facebook-guide/">
-        أفضل وقت للنشر على فيس بوك: الدليل الشامل للصفحات والجروبات والروابط وReels (2026)
-      </a>
-    </h3>
-
-    <p>
-      مرجع عربي عملي يوضح توقيت النشر حسب الدول العربية + الفرق بين Page/Group/Link posts وReels،
-      مع خطة اختبار 14 يوم وتحويل توقيت—وتوصيات مبنية على Meta Business Suite / Page Insights.
-    </p>
-  </div>
-
-  <div class="post-footer">
-    <a class="btn primary" href="/news/best-time-to-post-facebook-guide/">اقرأ الدليل</a>
-    <a class="btn secondary" href="/tools/best-time-to-post-facebook/" style="margin-inline-start:8px">جرّب الأداة</a>
-  </div>
-</article>
-
-     
-     
-    </section>
-  </section>
-
-  <!-- =========================
-       Section 2: Finance / Currency
-  ========================== -->
-  <section class="posts-group" id="group-finance">
-    <div class="section-block">
-      <h2>مقالات تحويل العملات والاقتصاد</h2>
-      <p class="note">تحويل دولار لجنيه، ريال لدرهم، USD to EGP… أدلة تساعدك على التحويل بسرعة باستخدام الأداة.</p>
-    </div>
-
-    <section class="grid" aria-label="مقالات تحويل العملات" id="posts-finance">
-      <!-- المقال 3: تحويل العملات -->
-      <article class="post-card" data-tags="finance tools seo egypt">
-        <img src="/assets/currency-converter.jpg" alt="محول العملات الفوري - تحويل دولار لجنيه مصري" loading="lazy" />
-        <div class="post-body">
-          <div class="post-meta">
-            <span class="tag">تحويل عملات</span>
-            <span class="tag">مصر</span>
-            <span class="tag">SEO</span>
-            <span>مدة القراءة: 6–8 دقائق</span>
-          </div>
-
-          <h3>
-            <a href="/news/currency-converter-usd-egp-sar-eur-try/">
-              تحويل العملات: دولار لجنيه مصري (USD→EGP) + ريال ويورو — دليل + أداة مجانية
-            </a>
-          </h3>
-
-          <p>
-            دليل عملي يستهدف أكثر ما يبحث عنه الناس: تحويل دولار لجنيه مصري، USD to EGP، تحويل ريال سعودي لجنيه،
-            وتحويل يورو/ليرة… مع رابط مباشر لأداة محول العملات الفوري من MarketAPro.
-          </p>
-        </div>
-
-        <div class="post-footer">
-          <a class="btn primary" href="/news/currency-converter-usd-egp-sar-eur-try/">اقرأ الدليل</a>
-          <a class="btn secondary" href="/tools/currency-converter/" style="margin-inline-start:8px">جرّب الأداة</a>
-        </div>
-      </article>
-
-     <!-- المقال: تحويل الدولار إلى الجنيه المصري -->
-<article class="post-card" data-tags="finance currency seo egypt">
-  <img
-    src="/assets/currency-converter-usd-egp.jpg"
-    alt="تحويل الدولار إلى الجنيه المصري USD to EGP"
-    loading="lazy"
-  />
-
-  <div class="post-body">
-    <div class="post-meta">
-      <span class="tag">تحويل عملات</span>
-      <span class="tag">مصر</span>
-      <span class="tag">USD → EGP</span>
-      <span>مدة القراءة: 6–8 دقائق</span>
-    </div>
-
-    <h2>
-      <a href="/news/usd-to-egp-today/">
-        تحويل الدولار إلى الجنيه المصري اليوم (USD → EGP) | دليل + أداة مجانية
-      </a>
-    </h2>
-
-    <p>
-      تعرّف على سعر الدولار اليوم في مصر، كيفية تحويل USD إلى EGP،
-      أمثلة تحويل شائعة (10 – 100 – 1000 دولار)،
-      مع رابط مباشر لأداة محول العملات الفوري من MarketAPro.
-    </p>
-  </div>
-
-  <div class="post-footer">
-    <a class="btn primary" href="/news/usd-to-egp-today/">اقرأ الدليل</a>
-    <a
-      class="btn secondary"
-      href="/tools/currency-converter/"
-      style="margin-inline-start:8px"
-    >
-      جرّب محول العملات
-    </a>
-  </div>
-</article>
-
-      <!-- المقال 4: تحويل الدولار إلى الريال السعودي (USD → SAR) -->
-<article class="post-card" data-tags="finance currency seo gulf saudi usd-sar">
-  <img src="/assets/currency-usd-sar.jpg" alt="تحويل الدولار إلى الريال السعودي - USD to SAR" loading="lazy" />
-  <div class="post-body">
-    <div class="post-meta">
-      <span class="tag">تحويل عملات</span>
-      <span class="tag">السعودية</span>
-      <span class="tag">الخليج</span>
-      <span class="tag">SEO</span>
-      <span>مدة القراءة: 6–8 دقائق</span>
-    </div>
-
-    <h3>
-      <a href="/news/usd-to-sar/">
-        تحويل الدولار إلى الريال السعودي (USD→SAR) اليوم — سعر الصرف + أداة تحويل فوري
-      </a>
-    </h3>
-
-    <p>
-      كل ما تحتاجه لتحويل دولار إلى ريال سعودي: سعر الصرف اليوم، أمثلة سريعة (100$، 500$، 1000$)،
-      وكيف تحسب التحويل بدقة بدون أخطاء — مع رابط مباشر لأداة محول العملات الفوري من MarketAPro.
-    </p>
-  </div>
-
-  <div class="post-footer">
-    <a class="btn primary" href="/news/usd-to-sar/">اقرأ الدليل</a>
-    <a class="btn secondary" href="/tools/currency-converter/" style="margin-inline-start:8px">جرّب الأداة</a>
-  </div>
-</article>
-
-
-     <!-- المقال: تحويل الدولار إلى الدرهم الإماراتي -->
-<article class="post-card" data-tags="finance tools seo uae aed">
-  <img src="/assets/currency-usd-aed.jpg"
-       alt="تحويل الدولار إلى الدرهم الإماراتي USD to AED"
-       loading="lazy" />
-
-  <div class="post-body">
-    <div class="post-meta">
-      <span class="tag">تحويل عملات</span>
-      <span class="tag">الإمارات</span>
-      <span class="tag">USD → AED</span>
-      <span>مدة القراءة: 6–8 دقائق</span>
-    </div>
-
-    <h3>
-      <a href="/news/usd-to-aed/">
-        تحويل الدولار إلى الدرهم الإماراتي (USD → AED) | سعر اليوم + محول فوري
-      </a>
-    </h3>
-
-    <p>
-      كم يساوي الدولار بالدرهم الإماراتي اليوم؟
-      دليل شامل يستهدف الإمارات مع أمثلة تحويل سريعة
-      ورابط مباشر لأداة محول العملات الفوري من MarketAPro.
-    </p>
-  </div>
-
-  <div class="post-footer">
-    <a class="btn primary" href="/news/usd-to-aed/">اقرأ الدليل</a>
-    <a class="btn secondary"
-       href="/tools/currency-converter/"
-       style="margin-inline-start:8px">
-       جرّب محول العملات
-    </a>
-  </div>
-</article>
-
-
-    <!-- Pillar Article: USD to Arab Currencies -->
-<article class="post-card" data-tags="usd dollar arab currencies seo finance">
-  <img src="/assets/currency-usd-arab.jpg" alt="كم يساوي الدولار اليوم مقابل العملات العربية" loading="lazy" />
-  
-  <div class="post-body">
-    <div class="post-meta">
-      <span class="tag">سعر الدولار اليوم</span>
-      <span class="tag">تحويل الدولار</span>
-      <span class="tag">العملات العربية</span>
-      <span>مدة القراءة: 8–10 دقائق</span>
-    </div>
-
-    <h3>
-      <a href="/news/usd-to-arab-currencies/">
-        كم يساوي الدولار اليوم مقابل العملات العربية؟ السعر والتحويل الفوري
-      </a>
-    </h3>
-
-    <p>
-      دليل شامل لمعرفة <strong>سعر الدولار اليوم</strong> مقابل جميع العملات العربية،
-      مع تحويل فوري إلى الريال السعودي، الجنيه المصري، الدرهم الإماراتي،
-      الدينار الكويتي والريال القطري باستخدام أداة مجانية ومحدثة.
-    </p>
-  </div>
-
-  <div class="post-footer">
-    <a class="btn primary" href="/news/usd-to-arab-currencies/">اقرأ الدليل الكامل</a>
-    <a class="btn secondary" href="/tools/currency-converter/" style="margin-inline-start:8px">
-      حوّل الدولار الآن
-    </a>
-  </div>
-</article>
-
-
-
-<!-- مقال: سيناريو 5000$ للأونصة (Gold 2026) -->
-<article class="post-card" data-tags="finance gold forecast xauusd banks geopolitics 5000">
-  <img src="/assets/gold-price-forecast-2026.jpg"
-       alt="توقعات أسعار الذهب 2026: سيناريو 5000 دولار للأونصة"
-       loading="lazy" />
-
-  <div class="post-body">
-    <div class="post-meta">
-      <span class="tag">ذهب</span>
-      <span class="tag">سيناريو 5000$</span>
-      <span class="tag">بنوك مركزية</span>
-      <span class="tag">جيوسياسة</span>
-      <span>مدة القراءة: 7–10 دقائق</span>
-    </div>
-
-    <h3>
-      <a href="/news/gold-price-forecast-2026/">
-        توقعات الذهب 2026: لماذا يتحدث البعض عن 5000 دولار للأونصة؟
-      </a>
-    </h3>
-
-    <p>
-      قراءة تحليلية لسيناريو وصول الذهب إلى 5000$ للأونصة في 2026:
-      دور مشتريات البنوك المركزية، ضعف الدولار، والتوترات الجيوسياسية —
-      مع توضيح ما الذي قد يدفع السعر للأعلى وما الذي قد يوقفه.
-    </p>
-  </div>
-
-  <div class="post-footer">
-    <a class="btn primary" href="/news/gold-price-forecast-2026/">
-      اقرأ سيناريو 5000$
-    </a>
-    <a class="btn secondary"
-       href="/news/2026-gold-price-outlook/"
-       style="margin-inline-start:8px">
-      افتح المرجع الشامل
-    </a>
-  </div>
-</article>
-
-     <!-- مقال توقعات الذهب 2026 (المرجع الشامل) -->
-<article class="post-card" data-tags="finance gold economy seo xauusd usd rates inflation">
-  <img src="/assets/gold-forecast-2026.jpg"
-       alt="توقعات أسعار الذهب 2026: آفاق السعر + العوامل المؤثرة + حاسبة العيارات"
-       loading="lazy" />
-
-  <div class="post-body">
-    <div class="post-meta">
-      <span class="tag">ذهب</span>
-      <span class="tag">توقعات 2026</span>
-      <span class="tag">تحليل اقتصادي</span>
-      <span class="tag">حاسبة</span>
-      <span>مدة القراءة: 10–14 دقيقة</span>
-    </div>
-
-    <h3>
-      <a href="/news/2026-gold-price-outlook/">
-        توقعات أسعار الذهب 2026: آفاق السعر + العوامل المؤثرة + حاسبة العيارات بعملتك
-      </a>
-    </h3>
-
-    <p>
-      مرجع شامل لتوقعات الذهب في 2026: كيف يؤثر الدولار والفائدة والعوائد الحقيقية والتضخم ومشتريات البنوك المركزية على السعر،
-      مع سيناريوهات واقعية للأونصة (XAUUSD) وحاسبة فورية لتحويل الأونصة إلى أسعار عيار 24/21/18 بعملتك.
-    </p>
-  </div>
-
-  <div class="post-footer">
-    <a class="btn primary" href="/news/2026-gold-price-outlook/">
-      اقرأ المرجع الكامل
-    </a>
-    <a class="btn secondary"
-       href="/tools/currency-converter/"
-       style="margin-inline-start:8px">
-      حوّل الدولار الآن
-    </a>
-  </div>
-</article>
-
-
-<!-- مقال: سيناريو 6000$ للأونصة (Gold 2026 – Advanced Outlook) -->
-<article class="post-card" data-tags="finance gold outlook xauusd 6000 central-banks macro geopolitics">
-  <img src="/assets/gold-6000-forecast-2026.jpg"
-       alt="سعر الذهب عام 2026 قد يصل إلى 6000 دولار – تحليل اقتصادي متقدم"
-       loading="lazy" />
-
-  <div class="post-body">
-    <div class="post-meta">
-      <span class="tag">ذهب</span>
-      <span class="tag">سيناريو 6000$</span>
-      <span class="tag">اقتصاد كلي</span>
-      <span class="tag">بنوك مركزية</span>
-      <span class="tag">مخاطر عالمية</span>
-      <span>مدة القراءة: 8–12 دقيقة</span>
-    </div>
-
-    <h3>
-      <a href="/news/gold-6000-forecast-2026/">
-        هل يمكن أن يصل الذهب إلى 6000 دولار في 2026؟ تحليل اقتصادي عميق
-      </a>
-    </h3>
-
-    <p>
-      تحليل مؤسسي متقدم لسيناريو وصول الذهب إلى 6000$ للأونصة في 2026،
-      بالاعتماد على تقارير مجلس الذهب العالمي وتحليلات رويترز:
-      العوائد الحقيقية، الدولار، مشتريات البنوك المركزية،
-      والعوامل التي قد تدفع السعر لهذا المستوى أو تعرقل تحققه.
-    </p>
-  </div>
-
-  <div class="post-footer">
-    <a class="btn primary" href="/news/gold-6000-forecast-2026/">
-      اقرأ سيناريو 6000$
-    </a>
-    <a class="btn secondary"
-       href="/news/2026-gold-price-outlook/"
-       style="margin-inline-start:8px">
-      الدليل المرجعي للذهب 2026
-    </a>
-  </div>
-</article>
-
-     
-     
-    </section>
-  </section>
-
-
- 
-  <!-- CTA ختامي -->
   <section class="cta" aria-label="دعوة لاتخاذ إجراء">
     <div>
       <strong>هل تريد أدوات أكثر + أدلة مختصرة قابلة للتطبيق؟</strong>
@@ -647,70 +241,6 @@
   </div>
 </footer>
 
-<script>
-  // بحث + فلترة (مطابقة صحيحة بالوسوم) + إخفاء الأقسام الفارغة + دعم لوحة المفاتيح
-  const q = document.getElementById('q');
-  const chips = [...document.querySelectorAll('.chip')];
-  const cards = [...document.querySelectorAll('.post-card')];
-  const groups = [...document.querySelectorAll('.posts-group')];
-
-  let activeFilter = 'all';
-
-  function normalizeTags(str){
-    return String(str || '')
-      .toLowerCase()
-      .trim()
-      .split(/\s+/)
-      .filter(Boolean);
-  }
-
-  function apply(){
-    const term = (q.value || '').trim().toLowerCase();
-
-    cards.forEach(card=>{
-      const text = (card.innerText || '').toLowerCase();
-      const tags = normalizeTags(card.getAttribute('data-tags'));
-
-      const matchesTerm = !term || text.includes(term);
-      const matchesFilter = (activeFilter === 'all') || tags.includes(activeFilter);
-
-      card.style.display = (matchesTerm && matchesFilter) ? '' : 'none';
-    });
-
-    // hide empty groups
-    groups.forEach(g=>{
-      const anyVisible = [...g.querySelectorAll('.post-card')].some(c => c.style.display !== 'none');
-      g.style.display = anyVisible ? '' : 'none';
-    });
-  }
-
-  function setActiveChip(el){
-    chips.forEach(x=>x.style.opacity = '0.85');
-    el.style.opacity = '1';
-  }
-
-  q.addEventListener('input', apply);
-
-  chips.forEach(c=>{
-    c.addEventListener('click', ()=>{
-      activeFilter = c.getAttribute('data-filter') || 'all';
-      setActiveChip(c);
-      apply();
-    });
-
-    // Accessibility: Enter/Space
-    c.addEventListener('keydown', (e)=>{
-      if(e.key === 'Enter' || e.key === ' '){
-        e.preventDefault();
-        c.click();
-      }
-    });
-  });
-
-  // Default
-  setActiveChip(chips[0]);
-  apply();
-</script>
+<script src="/news/js/news-home.js" defer></script>
 </body>
 </html>
-
