@@ -69,7 +69,7 @@
   "category": "currency",
   "tags": ["دولار كام جنيه مصري", "دولار كام مصري", "سعر الدولار اليوم", "USD", "EGP"],
   "badges": ["🔥 الأكثر بحثًا", "مصر", "تحديث لحظي"],
-"image": "/assets/dollar-kam-geneh-masri-currency-converter.jpg"
+  "image": "/assets/dollar-kam-geneh-masri-currency-converter.jpg",
   "reading": "3–5 دقائق",
   "toolUrl": "/tools/currency-converter/"
 }, 
