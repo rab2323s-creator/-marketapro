@@ -85,6 +85,20 @@
     "reading": "6–8 دقائق",
     "toolUrl": "/tools/currency-converter/"
   },
+  
+ {
+  "slug": "dollar-kam-riyal-saudi",
+  "title": "دولار كم ريال سعودي؟ | السعر اليوم + محول فوري",
+  "description": "دولار كم ريال سعودي اليوم؟ اعرف سعر الدولار مقابل الريال السعودي الآن مع محول عملات مباشر وأمثلة سريعة.",
+  "date": "2026-01-01",
+  "category": "currency",
+  "tags": ["دولار", "ريال سعودي", "USD", "SAR", "تحويل العملات"],
+  "badges": ["السعودية", "دولار → ريال"],
+  "image": "/assets/dollar-kam-riyal-saudi-currency-converter.jpg",
+  "reading": "5–7 دقائق",
+  "toolUrl": "/tools/currency-converter/"
+},
+  
   {
     "slug": "usd-to-aed",
     "title": "تحويل الدولار إلى الدرهم الإماراتي (USD → AED) | سعر اليوم + محول فوري",
