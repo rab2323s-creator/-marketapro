@@ -148,12 +148,12 @@
     "reading": "10–14 دقيقة",
     "toolUrl": "/tools/gold-price/"
   },
-  {
+ {
   "slug": "venezuela-shock-usd-gold-volatility-2026",
   "title": "صدمة فنزويلا 2026: لماذا قفزت التقلبات؟ وما مصير الدولار والذهب",
   "description": "تحليل اقتصادي ترندي لصدمة فنزويلا 2026: كيف تنتقل الصدمات الجيوسياسية إلى الدولار والذهب؟ ولماذا ارتفع التذبذب عالميًا؟ مع خطوات عملية لحساب الأثر محليًا.",
   "date": "2026-01-04",
-  "category": "economy",
+  "category": "currency",
   "tags": [
     "venezuela",
     "usd",
@@ -171,7 +171,7 @@
   ],
   "image": "/assets/venezuela-usd-gold-2026.jpg",
   "reading": "8–12 دقيقة",
-  "toolUrl": "/tools/currency-converter/"
+  "toolUrl": "https://marketapro.com/tools/gold-price/"
 },
 
   
