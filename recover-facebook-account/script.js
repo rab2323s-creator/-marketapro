@@ -1,109 +1,254 @@
  (function () {
   "use strict";
-
   const $ = (id) => document.getElementById(id);
+  const clean = (v) => String(v ?? "").trim();
 
-  const issueMapAr = {
-    disabled: "الحساب معطّل / تم تعطيله",
-    locked: "الحساب مقفول / تم قفله مؤقتًا",
-    hacked: "الحساب تم اختراقه",
-    impersonation: "انتحال شخصية",
-    defamation: "تشهير / إساءة",
+  const issueLabels = {
+    ar: {
+      disabled: "تم تعطيل الحساب",
+      locked: "تم قفل الحساب مؤقتًا",
+      hacked: "تم اختراق الحساب",
+      impersonation: "انتحال شخصية",
+      defamation: "تشهير / مضايقة",
+    },
+    en: {
+      disabled: "Account disabled",
+      locked: "Account locked",
+      hacked: "Account hacked",
+      impersonation: "Impersonation",
+      defamation: "Defamation / Harassment",
+    },
   };
 
-  const issueMapEn = {
-    disabled: "Account disabled",
-    locked: "Account locked temporarily",
-    hacked: "Account hacked",
-    impersonation: "Impersonation",
-    defamation: "Defamation / Harassment",
+  // جمل قوية حسب المشكلة (بدون مبالغة)
+  const templates = {
+    ar: {
+      disabled: ({ context }) => ({
+        title: "طلب مراجعة بشرية لإعادة تفعيل حساب فيسبوك",
+        body: [
+          "أتقدم بطلب مراجعة بشرية لقرار تعطيل حسابي. أعتقد أن الإجراء تم بالخطأ أو بسبب سوء فهم.",
+          context
+            ? `ملخص الحالة: ${context}`
+            : "ملخص الحالة: لم أتلقَّ توضيحًا كافيًا عن سبب التعطيل، وأطلب التحقق من الالتزام بمعايير المجتمع.",
+          "أؤكد التزامي بمعايير المجتمع وشروط الاستخدام، وأرجو إعادة تفعيل الحساب أو توضيح المخالفة إن وجدت وخطوات تصحيحها.",
+        ],
+        evidence: [
+          "صورة من رسالة التعطيل/الإنذار داخل التطبيق",
+          "أي بريد إلكتروني من Meta بخصوص الإجراء",
+          "إن وُجد: إثبات هوية مطابق لاسم الحساب",
+        ],
+      }),
+
+      locked: ({ context }) => ({
+        title: "طلب استعادة الوصول لحساب فيسبوك المقفول",
+        body: [
+          "حسابي مقفول مؤقتًا ولا أستطيع إكمال خطوات الاسترداد.",
+          context
+            ? `ملخص الحالة: ${context}`
+            : "ملخص الحالة: أواجه مشكلة في التحقق/الكود أو ظهور حلقة تحقق تمنعني من الدخول.",
+          "أرجو إرشادي للخطوات الصحيحة لاستعادة الوصول أو إعادة ضبط آلية التحقق.",
+        ],
+        evidence: [
+          "لقطات شاشة لرسالة القفل/خطأ التحقق",
+          "رقم الهاتف/البريد المرتبط (إن وُجد)",
+        ],
+      }),
+
+      hacked: ({ context }) => ({
+        title: "بلاغ اختراق وطلب تأمين الحساب واستعادة الوصول",
+        body: [
+          "أعتقد أن حسابي تعرّض للاختراق وتم تغيير كلمة المرور/البريد أو تنفيذ نشاط غير مصرح به.",
+          context
+            ? `تفاصيل مهمة: ${context}`
+            : "تفاصيل مهمة: لاحظت تسجيلات دخول أو تغييرات لم أقم بها، وأحتاج استعادة الوصول وتأمين الحساب.",
+          "أرجو تعطيل أي جلسات نشطة غير معروفة، وإتاحة استرداد الحساب، وتأكيد الإجراءات اللازمة لتأمينه.",
+        ],
+        evidence: [
+          "تاريخ/وقت آخر نشاط مشبوه (إن عُرف)",
+          "لقطات شاشة للتغييرات أو الإشعارات",
+          "إثبات هوية إن طُلب",
+        ],
+      }),
+
+      impersonation: ({ context }) => ({
+        title: "طلب إزالة حساب/صفحة تنتحل شخصيتي",
+        body: [
+          "يوجد حساب/صفحة تنتحل شخصيتي وتستخدم اسمي/صوري أو تدّعي تمثيلي.",
+          context
+            ? `معلومات إضافية: ${context}`
+            : "معلومات إضافية: أطلب التحقق من الانتحال واتخاذ الإجراء المناسب وفق سياسات Meta.",
+          "أرجو إزالة المحتوى/الحساب المنتحل، وحماية اسمي من تكرار الانتحال.",
+        ],
+        evidence: [
+          "روابط الحساب/المنشورات المنتحلة",
+          "رابط حسابي الحقيقي",
+          "صور مقارنة أو إثبات هوية",
+        ],
+      }),
+
+      defamation: ({ context }) => ({
+        title: "بلاغ تشهير/مضايقة وطلب إزالة المحتوى المسيء",
+        body: [
+          "تعرّضت لتشهير/مضايقة عبر منشور/حساب على فيسبوك، ويتضمن إساءة أو معلومات مضللة تسبب ضررًا.",
+          context
+            ? `ملخص الضرر والمحتوى: ${context}`
+            : "ملخص الضرر والمحتوى: أطلب مراجعة المحتوى وفق سياسات التحرّش وخطاب الكراهية/التنمر (حسب الحالة).",
+          "أرجو إزالة المحتوى المسيء واتخاذ الإجراء المناسب بحق الحساب، مع إتاحة طريقة واضحة للطعن/المتابعة.",
+        ],
+        evidence: [
+          "روابط المنشورات/التعليقات المسيئة",
+          "لقطات شاشة توضح الإساءة وتاريخها",
+          "إن لزم: توضيح الضرر (تهديد، ابتزاز، نشر بيانات…)",
+        ],
+      }),
+    },
+
+    en: {
+      disabled: ({ context }) => ({
+        title: "Request for human review to restore my Facebook account",
+        body: [
+          "I’m requesting a human review of the decision to disable my Facebook account. I believe this action may have been taken by mistake or due to a misunderstanding.",
+          context
+            ? `Case summary: ${context}`
+            : "Case summary: I did not receive sufficient clarity on the reason for the disablement and I’m requesting a review against Community Standards.",
+          "I confirm my intent to comply with Meta policies. Please restore access or clearly explain any violation and the corrective steps required.",
+        ],
+        evidence: [
+          "Screenshot of the disable/violation notice",
+          "Any email from Meta related to the action",
+          "Valid ID matching the account name (if requested)",
+        ],
+      }),
+
+      locked: ({ context }) => ({
+        title: "Request to regain access to my locked Facebook account",
+        body: [
+          "My account appears to be locked and I’m unable to complete the recovery/verification steps.",
+          context
+            ? `Case summary: ${context}`
+            : "Case summary: I’m stuck in verification loops or not receiving codes and cannot proceed.",
+          "Please advise the correct steps to regain access or reset the verification method.",
+        ],
+        evidence: [
+          "Screenshots of the lock/verification error",
+          "Associated email/phone (if any)",
+        ],
+      }),
+
+      hacked: ({ context }) => ({
+        title: "Report: account compromised — request to secure and restore access",
+        body: [
+          "I believe my Facebook account has been compromised and unauthorized changes/logins occurred.",
+          context
+            ? `Key details: ${context}`
+            : "Key details: I noticed suspicious login activity or changes I did not make and need help restoring access and securing the account.",
+          "Please revoke unknown sessions, enable recovery, and confirm the steps needed to secure the account.",
+        ],
+        evidence: [
+          "Approx. date/time of suspicious activity (if known)",
+          "Screenshots/notifications of changes",
+          "Valid ID if required",
+        ],
+      }),
+
+      impersonation: ({ context }) => ({
+        title: "Request: remove an account/page impersonating me",
+        body: [
+          "There is an account/page impersonating me by using my name/photos or claiming to represent me.",
+          context
+            ? `Additional information: ${context}`
+            : "Additional information: Please review the impersonation under Meta’s policies and take the appropriate action.",
+          "Please remove the impersonating account/content and help prevent repeated impersonation.",
+        ],
+        evidence: [
+          "Links to the impersonating account/posts",
+          "Link to my real account",
+          "Comparisons and/or proof of identity",
+        ],
+      }),
+
+      defamation: ({ context }) => ({
+        title: "Report: defamation/harassment — request content removal",
+        body: [
+          "I’m reporting defamation/harassment content posted about me. It includes abusive or misleading information that is causing harm.",
+          context
+            ? `Content & impact summary: ${context}`
+            : "Content & impact summary: Please review the content under harassment/bullying policies (as applicable).",
+          "Please remove the violating content and take appropriate action on the account. If possible, provide a clear appeal/follow-up path.",
+        ],
+        evidence: [
+          "Links to the posts/comments",
+          "Screenshots showing the content and date",
+          "If applicable: details of harm (threats, doxxing, extortion, etc.)",
+        ],
+      }),
+    },
   };
 
-  function clean(v) {
-    return String(v ?? "").trim();
-  }
+  function build(lang, data) {
+    const L = lang === "en" ? "en" : "ar";
+    const issue = data.issue || "disabled";
+    const label = issueLabels[L][issue] || issue;
+    const t = templates[L][issue] || templates[L].disabled;
+    const pack = t({ context: data.context });
 
-  function todayISO() {
-    const d = new Date();
-    const pad = (n) => String(n).padStart(2, "0");
-    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
-  }
-
-  function buildText(lang, data) {
-    const {
-      issue,
-      fullName,
-      email,
-      profileUrl,
-      country,
-      context,
-      links,
-    } = data;
-
-    const issueLabel = lang === "ar" ? (issueMapAr[issue] || issue) : (issueMapEn[issue] || issue);
-    const date = todayISO();
-
-    if (lang === "ar") {
-      const lines = [];
+    const lines = [];
+    if (L === "ar") {
       lines.push("مرحبًا فريق دعم Meta،");
       lines.push("");
-      lines.push("أتقدم بطلب مراجعة لقرار تقييد/تعطيل حسابي على فيسبوك، وأرجو إعادة التحقق من الحالة.");
+      lines.push(`الموضوع: ${pack.title}`);
       lines.push("");
-      lines.push("بيانات الحساب:");
-      if (fullName) lines.push(`- الاسم على الحساب: ${fullName}`);
-      if (profileUrl) lines.push(`- رابط الحساب/الملف الشخصي: ${profileUrl}`);
-      if (email) lines.push(`- البريد/الهاتف المرتبط (اختياري): ${email}`);
-      if (country) lines.push(`- الدولة: ${country}`);
-      lines.push(`- نوع المشكلة: ${issueLabel}`);
-      lines.push(`- تاريخ الطلب: ${date}`);
+      lines.push("بيانات:");
+      if (data.fullName) lines.push(`- الاسم: ${data.fullName}`);
+      if (data.profileUrl) lines.push(`- رابط الحساب: ${data.profileUrl}`);
+      if (data.email) lines.push(`- البريد/الهاتف (اختياري): ${data.email}`);
+      if (data.country) lines.push(`- الدولة: ${data.country}`);
+      lines.push(`- نوع المشكلة: ${label}`);
       lines.push("");
-      lines.push("توضيح مختصر لما حدث:");
-      lines.push(context || "تم اتخاذ إجراء على الحساب، وأعتقد أن ذلك قد يكون بالخطأ أو نتيجة سوء فهم. أرجو مراجعة الحالة وإرشادي للخطوات المطلوبة لاستعادة الوصول.");
-      if (links) {
+      lines.push(...pack.body.map((x) => `- ${x}`));
+      if (data.links) {
         lines.push("");
-        lines.push("روابط/أدلة مرتبطة (إن وجدت):");
-        lines.push(links);
+        lines.push("روابط ذات صلة:");
+        lines.push(data.links);
       }
       lines.push("");
-      lines.push("أتعهد بالالتزام بمعايير المجتمع وشروط الاستخدام، وأرجو مراجعة بشرية للحالة وإعادة تفعيل الحساب إذا لم توجد مخالفة.");
+      lines.push("مقترح مرفقات/أدلة:");
+      lines.push(...pack.evidence.map((x) => `- ${x}`));
       lines.push("");
       lines.push("شكرًا لكم.");
       return lines.join("\n");
-    }
-
-    // English
-    const lines = [];
-    lines.push("Hello Meta Support Team,");
-    lines.push("");
-    lines.push("I’m requesting a review of the decision to restrict/disable my Facebook account. Please re-check the case and restore access if this was a mistake.");
-    lines.push("");
-    lines.push("Account details:");
-    if (fullName) lines.push(`- Name on the account: ${fullName}`);
-    if (profileUrl) lines.push(`- Profile/Account URL: ${profileUrl}`);
-    if (email) lines.push(`- Associated email/phone (optional): ${email}`);
-    if (country) lines.push(`- Country: ${country}`);
-    lines.push(`- Issue type: ${issueLabel}`);
-    lines.push(`- Date: ${date}`);
-    lines.push("");
-    lines.push("Short explanation:");
-    lines.push(context || "An action was taken on my account and I believe it may be a mistake or misunderstanding. Please review the case and advise the exact steps needed to regain access.");
-    if (links) {
+    } else {
+      lines.push("Hello Meta Support Team,");
       lines.push("");
-      lines.push("Related links/evidence (if any):");
-      lines.push(links);
+      lines.push(`Subject: ${pack.title}`);
+      lines.push("");
+      lines.push("Details:");
+      if (data.fullName) lines.push(`- Name: ${data.fullName}`);
+      if (data.profileUrl) lines.push(`- Account URL: ${data.profileUrl}`);
+      if (data.email) lines.push(`- Email/Phone (optional): ${data.email}`);
+      if (data.country) lines.push(`- Country: ${data.country}`);
+      lines.push(`- Issue: ${label}`);
+      lines.push("");
+      lines.push(...pack.body.map((x) => `- ${x}`));
+      if (data.links) {
+        lines.push("");
+        lines.push("Relevant links:");
+        lines.push(data.links);
+      }
+      lines.push("");
+      lines.push("Suggested evidence to attach:");
+      lines.push(...pack.evidence.map((x) => `- ${x}`));
+      lines.push("");
+      lines.push("Thank you.");
+      return lines.join("\n");
     }
-    lines.push("");
-    lines.push("I will comply with Community Standards and Terms of Service. Please restore my account if no violation is found.");
-    lines.push("");
-    lines.push("Thank you.");
-    return lines.join("\n");
   }
 
   async function copyText(text) {
     try {
       await navigator.clipboard.writeText(text);
       return true;
-    } catch (e) {
+    } catch {
       const ta = document.createElement("textarea");
       ta.value = text;
       ta.setAttribute("readonly", "");
@@ -115,12 +260,6 @@
       document.body.removeChild(ta);
       return ok;
     }
-  }
-
-  function setStatus(msg) {
-    const el = $("copyStatus");
-    if (!el) return;
-    el.textContent = msg;
   }
 
   function getData() {
@@ -138,35 +277,37 @@
 
   function generate() {
     const data = getData();
-    const lang = data.lang === "en" ? "en" : "ar";
-    const text = buildText(lang, data);
-    const out = $("output");
-    if (out) out.textContent = text;
+    const text = build(data.lang, data);
+    if ($("output")) $("output").textContent = text;
+    setStatus("تم توليد نص أقوى ✅");
     return text;
+  }
+
+  function setStatus(msg) {
+    if ($("copyStatus")) $("copyStatus").textContent = msg;
   }
 
   function shorten() {
     const data = getData();
-    const lang = data.lang === "en" ? "en" : "ar";
-    const issueLabel = lang === "ar" ? (issueMapAr[data.issue] || data.issue) : (issueMapEn[data.issue] || data.issue);
-    const date = todayISO();
+    const L = data.lang === "en" ? "en" : "ar";
+    const label = issueLabels[L][data.issue] || data.issue || (L === "ar" ? "تم تعطيل الحساب" : "Account disabled");
 
     const shortAr =
-      `مرحبًا فريق دعم Meta،\n\n` +
-      `أرجو مراجعة قرار تقييد/تعطيل حسابي على فيسبوك (${issueLabel}). ` +
-      `الاسم: ${data.fullName || "—"}، الرابط: ${data.profileUrl || "—"}، التاريخ: ${date}.\n` +
-      `تفاصيل مختصرة: ${data.context || "أعتقد أن هناك خطأ أو سوء فهم. أرجو مراجعة بشرية وإرشادي للخطوات."}\n\n` +
-      `شكرًا لكم.`;
+      `مرحبًا دعم Meta،\n` +
+      `أطلب مراجعة بشرية لمشكلتي: ${label}. ` +
+      `الاسم: ${data.fullName || "—"}، الرابط: ${data.profileUrl || "—"}. ` +
+      `${data.context ? `ملخص: ${data.context}` : "أعتقد أنه تم بالخطأ. أرجو إعادة التفعيل/التوجيه."}\n` +
+      `شكرًا.`;
 
     const shortEn =
-      `Hello Meta Support Team,\n\n` +
-      `Please review the restriction/disable on my Facebook account (${issueLabel}). ` +
-      `Name: ${data.fullName || "—"}, URL: ${data.profileUrl || "—"}, Date: ${date}.\n` +
-      `Brief details: ${data.context || "I believe this may be a mistake. Please conduct a human review and advise next steps."}\n\n` +
-      `Thank you.`;
+      `Hello Meta Support,\n` +
+      `Please conduct a human review for: ${label}. ` +
+      `Name: ${data.fullName || "—"}, URL: ${data.profileUrl || "—"}. ` +
+      `${data.context ? `Summary: ${data.context}` : "I believe this may be a mistake. Please restore access/advise next steps."}\n` +
+      `Thanks.`;
 
-    const out = $("output");
-    if (out) out.textContent = (lang === "ar") ? shortAr : shortEn;
+    if ($("output")) $("output").textContent = L === "ar" ? shortAr : shortEn;
+    setStatus("تم توليد نسخة مختصرة ✅");
   }
 
   function resetForm() {
@@ -176,7 +317,7 @@
     });
     if ($("issue")) $("issue").value = "disabled";
     if ($("lang")) $("lang").value = "ar";
-    $("output").textContent = 'اضغط “توليد النص” لعرض نص الاعتراض هنا.';
+    if ($("output")) $("output").textContent = "اضغط “توليد النص” لعرض النتيجة هنا.";
     setStatus("تم المسح");
   }
 
@@ -184,21 +325,20 @@
     $("btnGenerate")?.addEventListener("click", (e) => {
       e.preventDefault();
       generate();
-      setStatus("تم توليد النص");
     });
 
     $("btnCopy")?.addEventListener("click", async (e) => {
       e.preventDefault();
-      const text = $("output")?.textContent?.trim() || "";
-      const finalText = text.includes("اضغط") ? generate() : text;
+      const out = $("output");
+      const text = (out?.textContent || "").trim();
+      const finalText = text && !text.includes("اضغط") ? text : generate();
       const ok = await copyText(finalText);
-      setStatus(ok ? "✅ تم نسخ النص" : "⚠️ لم يتم النسخ — انسخ يدويًا");
+      setStatus(ok ? "✅ تم النسخ" : "⚠️ لم يتم النسخ — انسخ يدويًا");
     });
 
     $("btnShorten")?.addEventListener("click", (e) => {
       e.preventDefault();
       shorten();
-      setStatus("تم اختصار النص");
     });
 
     $("btnReset")?.addEventListener("click", (e) => {
@@ -206,15 +346,12 @@
       resetForm();
     });
 
-    // إعادة توليد عند تغيير اللغة أو نوع المشكلة (مريح للمستخدم)
     $("lang")?.addEventListener("change", generate);
     $("issue")?.addEventListener("change", generate);
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => {
-      wire();
-    });
+    document.addEventListener("DOMContentLoaded", wire);
   } else {
     wire();
   }
