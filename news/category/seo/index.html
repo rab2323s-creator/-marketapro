@@ -22,34 +22,9 @@
   <link rel="stylesheet" href="/style.css" />
 
   <!-- Schema: CollectionPage -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"CollectionPage",
-    "name":"مقالات SEO وتحسين محركات البحث",
-    "url":"https://marketapro.com/news/category/seo/",
-    "description":"مقالات وأدلة SEO عربية لتحسين ترتيب موقعك في جوجل: سيو داخلي وتقني، كلمات مفتاحية، سرعة وتجربة مستخدم.",
-    "publisher":{"@type":"Organization","name":"MarketAPro","url":"https://marketapro.com/"}
-  }
-  </script>
-
-  <!-- Schema: Breadcrumb -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://marketapro.com/"},
-      {"@type":"ListItem","position":2,"name":"المقالات","item":"https://marketapro.com/news/"},
-      {"@type":"ListItem","position":3,"name":"SEO","item":"https://marketapro.com/news/category/seo/"}
-    ]
-  }
-  </script>
-
-  <!-- Schema: ItemList (سيتم توليده من category-page.js عند وجود مقالات) -->
-  <script type="application/ld+json" id="itemlist-schema"></script>
-
-  <style>
+<!-- Schema: Breadcrumb -->
+<!-- Schema: ItemList (سيتم توليده من category-page.js عند وجود مقالات) -->
+<style>
     .hero-block{
       padding:18px;border-radius:18px;border:1px solid var(--border);
       background:rgba(255,255,255,.02);
@@ -133,6 +108,70 @@
     summary{cursor:pointer;font-weight:800}
     details p{margin:8px 0 0;color:var(--muted);line-height:1.9}
   </style>
+
+<script type="application/ld+json" id="itemlist-schema"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://marketapro.com/#organization",
+      "name": "MarketAPro",
+      "url": "https://marketapro.com/",
+      "description": "أدوات تسويق رقمية مجانية ومقالات عملية لتحسين الأداء وزيادة التفاعل."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://marketapro.com/#website",
+      "url": "https://marketapro.com/",
+      "name": "MarketAPro",
+      "publisher": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://marketapro.com/news/category/seo/",
+      "url": "https://marketapro.com/news/category/seo/",
+      "name": "مقالات SEO وتحسين محركات البحث | دليل عملي لرفع ترتيب موقعك | MarketAPro",
+      "description": "مقالات وأدلة SEO عربية تساعدك على تحسين ترتيب موقعك في جوجل: SEO داخلي، SEO تقني، بحث كلمات مفتاحية، تحسين السرعة وتجربة المستخدم — مع أدوات مجانية من MarketAPro.",
+      "isPartOf": {
+        "@id": "https://marketapro.com/#website"
+      },
+      "about": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://marketapro.com/news/category/seo/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://marketapro.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "المقالات",
+          "item": "https://marketapro.com/news/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "seo",
+          "item": "https://marketapro.com/news/category/seo/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 
 <body data-category="seo">
