@@ -22,34 +22,9 @@
   <link rel="stylesheet" href="/style.css" />
 
   <!-- Schema: CollectionPage -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"CollectionPage",
-    "name":"مقالات تحويل العملات وأسعار الصرف",
-    "url":"https://marketapro.com/news/category/currency/",
-    "description":"مقالات وأدلة عملية لتحويل العملات وأسعار الصرف (USD→EGP/SAR/AED…) مع محول عملات مجاني.",
-    "publisher":{"@type":"Organization","name":"MarketAPro","url":"https://marketapro.com/"}
-  }
-  </script>
-
-  <!-- Schema: Breadcrumb -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://marketapro.com/"},
-      {"@type":"ListItem","position":2,"name":"المقالات","item":"https://marketapro.com/news/"},
-      {"@type":"ListItem","position":3,"name":"تحويل العملات","item":"https://marketapro.com/news/category/currency/"}
-    ]
-  }
-  </script>
-
-  <!-- Schema: ItemList (سيتم توليده من category-page.js) -->
-  <script type="application/ld+json" id="itemlist-schema"></script>
-
-  <style>
+<!-- Schema: Breadcrumb -->
+<!-- Schema: ItemList (سيتم توليده من category-page.js) -->
+<style>
     .hero-block{
       padding:18px;border-radius:18px;border:1px solid var(--border);
       background:rgba(255,255,255,.02);
@@ -84,6 +59,70 @@
     .cta span{color:var(--muted);font-size:13px}
     .quicklinks{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
   </style>
+
+<script type="application/ld+json" id="itemlist-schema"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://marketapro.com/#organization",
+      "name": "MarketAPro",
+      "url": "https://marketapro.com/",
+      "description": "أدوات تسويق رقمية مجانية ومقالات عملية لتحسين الأداء وزيادة التفاعل."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://marketapro.com/#website",
+      "url": "https://marketapro.com/",
+      "name": "MarketAPro",
+      "publisher": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://marketapro.com/news/category/currency/",
+      "url": "https://marketapro.com/news/category/currency/",
+      "name": "مقالات تحويل العملات وأسعار الصرف | USD إلى EGP و SAR و AED | MarketAPro",
+      "description": "مقالات وأدلة تحويل العملات وأسعار الصرف: تحويل الدولار إلى الجنيه المصري (USD→EGP)، الدولار إلى الريال (USD→SAR)، الدولار إلى الدرهم (USD→AED) والمزيد — مع محول عملات مجاني وفوري.",
+      "isPartOf": {
+        "@id": "https://marketapro.com/#website"
+      },
+      "about": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://marketapro.com/news/category/currency/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://marketapro.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "المقالات",
+          "item": "https://marketapro.com/news/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "currency",
+          "item": "https://marketapro.com/news/category/currency/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 
 <body data-category="currency">
