@@ -1,4 +1,4 @@
-  <!doctype html>
+ <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
@@ -41,19 +41,143 @@
   </style>
 
   <!-- WebApplication Schema (اختياري قوي للـ SEO) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebApplication",
-    "name":"أسعار الذهب الفورية",
-    "url":"https://marketapro.com/tools/gold-price/",
-    "applicationCategory":"FinanceApplication",
-    "operatingSystem":"Any",
-    "description":"أداة أسعار الذهب: سعر الجرام والأونصة حسب العيار وبعملات الخليج ومصر ولبنان وسوريا مع تاريخ التحديث وكاش وسجل.",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-    "publisher":{"@type":"Organization","name":"MarketAPro","url":"https://marketapro.com/"}
-  }
-  </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://marketapro.com/#organization",
+      "name": "MarketAPro",
+      "url": "https://marketapro.com/",
+      "description": "أدوات تسويق رقمية مجانية ومقالات عملية لتحسين الأداء وزيادة التفاعل."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://marketapro.com/#website",
+      "url": "https://marketapro.com/",
+      "name": "MarketAPro",
+      "publisher": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://marketapro.com/tools/gold-price/",
+      "url": "https://marketapro.com/tools/gold-price/",
+      "name": "أسعار الذهب الفورية — جرام/أونصة + عيارات | MarketAPro",
+      "description": "أداة أسعار الذهب: سعر الجرام والأونصة حسب العيار وبعملات الخليج ومصر ولبنان وسوريا مع تاريخ التحديث وكاش وسجل.",
+      "isPartOf": {
+        "@id": "https://marketapro.com/#website"
+      },
+      "about": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://marketapro.com/tools/gold-price/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://marketapro.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "الأدوات",
+          "item": "https://marketapro.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "gold price",
+          "item": "https://marketapro.com/tools/gold-price/"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://marketapro.com/tools/gold-price/#app",
+      "name": "أسعار الذهب الفورية — جرام/أونصة + عيارات | MarketAPro",
+      "url": "https://marketapro.com/tools/gold-price/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "inLanguage": "ar",
+      "isPartOf": {
+        "@id": "https://marketapro.com/#website"
+      },
+      "publisher": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://marketapro.com/tools/gold-price/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "هل السعر المعروض عالمي أم محلي؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "يعتمد على إعدادات الأداة. عادة يُعرض السعر العالمي ويمكن إضافة تحويلات حسب العملة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل سعر الذهب يتغير خلال اليوم؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، يتغير مع حركة الدولار والعوائد والأخبار الاقتصادية."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل السعر يشمل المصنعية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا، المصنعية تختلف حسب البلد والمتجر."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أتابع الاتجاه؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "راقب السعر يوميًا مع مؤشرات مثل الدولار والتضخم وقرارات الفائدة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل الأداة مجانية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ما الفرق بين عيار 24 و21؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "العيار 24 أنقى، و21 أقل نقاءً وأكثر شيوعًا في بعض الدول."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
