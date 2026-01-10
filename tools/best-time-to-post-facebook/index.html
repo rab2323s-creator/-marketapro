@@ -1,4 +1,4 @@
-  <!doctype html>
+ <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
@@ -21,68 +21,9 @@
   <link rel="stylesheet" href="/style.css" />
 
   <!-- WebApplication Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebApplication",
-    "name":"أفضل وقت للنشر على فيس بوك",
-    "url":"https://marketapro.com/tools/best-time-to-post-facebook/",
-    "applicationCategory":"BusinessApplication",
-    "operatingSystem":"Any",
-    "description":"أداة عربية مجانية تقترح أفضل أوقات النشر على فيس بوك حسب البلد ونوع الحساب والهدف مع توصيات عملية وتحويل توقيت (مع مراعاة DST).",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-    "publisher":{"@type":"Organization","name":"MarketAPro","url":"https://marketapro.com/"}
-  }
-  </script>
-
-  <!-- ✅ FAQ Schema (Facebook-specific) — FIXED -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"هل يوجد وقت ثابت مناسب للجميع للنشر على فيس بوك؟",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"لا يوجد وقت واحد يناسب الجميع. أفضل وقت يعتمد على بلد الجمهور، ونوع المحتوى (Reels/روابط/منشورات)، ونشاط الجمهور في Page Insights / Meta Business Suite. هذه الأداة تعطي اقتراحات عامة قوية لتبدأ منها ثم تختبر وتثبت الأفضل."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"هل تختلف أوقات النشر بين الجروبات والصفحات على فيس بوك؟",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"نعم. غالبًا الجروبات تنشط مساءً (خصوصًا 20:00–22:00) لأن الناس تتفاعل بعد العمل، بينما صفحات الأعمال قد تستفيد من أوقات الدوام (10:00–12:00) للروابط والمحتوى المهني."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"كيف أحصل على أدق أوقات لصفحتي؟",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"راجع Meta Business Suite / Page Insights لمعرفة متى يكون جمهورك متصلًا، ثم اختبر 3 أوقات لمدة 14 يومًا مع نفس نوع المحتوى، وقارن الوصول والتفاعل والرسائل (وللروابط: النقرات)."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Breadcrumb -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://marketapro.com/"},
-      {"@type":"ListItem","position":2,"name":"الأدوات","item":"https://marketapro.com/tools/"},
-      {"@type":"ListItem","position":3,"name":"أفضل وقت للنشر على فيس بوك","item":"https://marketapro.com/tools/best-time-to-post-facebook/"}
-    ]
-  }
-  </script>
-
-  <style>
+<!-- ✅ FAQ Schema (Facebook-specific) — FIXED -->
+<!-- Breadcrumb -->
+<style>
     .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-top:18px}
     @media (max-width: 900px){.wrap{grid-template-columns:1fr}}
 
@@ -179,6 +120,144 @@
     .mini{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.8}
     .anchor{scroll-margin-top: 90px;}
   </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://marketapro.com/#organization",
+      "name": "MarketAPro",
+      "url": "https://marketapro.com/",
+      "description": "أدوات تسويق رقمية مجانية ومقالات عملية لتحسين الأداء وزيادة التفاعل."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://marketapro.com/#website",
+      "url": "https://marketapro.com/",
+      "name": "MarketAPro",
+      "publisher": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://marketapro.com/tools/best-time-to-post-facebook/",
+      "url": "https://marketapro.com/tools/best-time-to-post-facebook/",
+      "name": "أفضل وقت للنشر على فيس بوك | أداة مجانية تحدد التوقيت بدقة | MarketAPro",
+      "description": "اكتشف أفضل وقت للنشر على فيس بوك حسب بلد جمهورك ونوع الحساب والهدف (تفاعل/وصول/مبيعات) ونوع المحتوى والمجال + تحويل توقيت مع مراعاة DST + خطة اختبار 14 يوم.",
+      "isPartOf": {
+        "@id": "https://marketapro.com/#website"
+      },
+      "about": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://marketapro.com/tools/best-time-to-post-facebook/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://marketapro.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "الأدوات",
+          "item": "https://marketapro.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "best time to post facebook",
+          "item": "https://marketapro.com/tools/best-time-to-post-facebook/"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://marketapro.com/tools/best-time-to-post-facebook/#app",
+      "name": "أفضل وقت للنشر على فيس بوك | أداة مجانية تحدد التوقيت بدقة | MarketAPro",
+      "url": "https://marketapro.com/tools/best-time-to-post-facebook/",
+      "applicationCategory": "MarketingApplication",
+      "operatingSystem": "All",
+      "inLanguage": "ar",
+      "isPartOf": {
+        "@id": "https://marketapro.com/#website"
+      },
+      "publisher": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "image": "https://marketapro.com/assets/og-best-time-facebook.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://marketapro.com/tools/best-time-to-post-facebook/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ما أفضل وقت للنشر على فيسبوك؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "غالبًا قبل وبعد ساعات العمل (9–11 صباحًا و7–9 مساءً)، لكن الأفضل يعتمد على نشاط جمهور صفحتك."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يختلف الوقت بين الفيديو والصورة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم. الفيديو غالبًا يعمل أفضل مساءً، بينما المنشورات القصيرة قد تعمل وقت الظهر."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كم يوم أختبر قبل اتخاذ قرار؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "أسبوعين على الأقل مع تغيير وقت واحد فقط كل مرة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل النشر اليومي ضروري؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "الاستمرارية أهم. 3–5 مرات أسبوعيًا ممتازة لمعظم الصفحات."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أقرأ Insights؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "راقب Reach و Engagement حسب الساعة/اليوم وحدد أعلى 2–3 فترات."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل النشر في مجموعات أفضل؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "قد يرفع التفاعل إذا كان المحتوى مناسبًا لقواعد المجموعة ويقدم قيمة حقيقية."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
