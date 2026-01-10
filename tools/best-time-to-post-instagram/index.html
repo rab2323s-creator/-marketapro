@@ -21,83 +21,9 @@
   <link rel="stylesheet" href="/style.css" />
 
   <!-- WebApplication Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebApplication",
-    "name":"أفضل وقت للنشر على إنستغرام",
-    "url":"https://marketapro.com/tools/best-time-to-post-instagram/",
-    "applicationCategory":"BusinessApplication",
-    "operatingSystem":"Any",
-    "description":"أداة عربية مجانية تقترح أفضل أوقات النشر على إنستغرام حسب البلد ونوع الحساب والهدف مع توصيات عملية.",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-    "publisher":{"@type":"Organization","name":"MarketAPro","url":"https://marketapro.com/"}
-  }
-  </script>
+<!-- FAQ Schema -->
 
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"هل يوجد وقت ثابت مناسب للجميع للنشر على إنستغرام؟",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"لا يوجد وقت واحد يناسب الجميع. أفضل وقت يعتمد على بلد الجمهور، ونوع المحتوى، ونشاط المتابعين في Insights. هذه الأداة تعطي اقتراحات عامة قوية لتبدأ منها ثم تختبر وتثبت الأفضل."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"هل يختلف أفضل وقت للنشر بين Reels وPosts؟",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"نعم. غالبًا Reels تعمل جيدًا مساءً وعطلة نهاية الأسبوع، بينما المنشورات (Posts/Carousels) قد تعمل أفضل وقت الظهيرة أو بعد العمل حسب جمهورك."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"كيف أعرف الوقت الأدق لحسابي؟",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"أفضل طريقة هي الرجوع إلى Instagram Insights لمعرفة نشاط المتابعين بالساعات والأيام، ثم اختبار 3 أوقات نشر لمدة أسبوعين ومقارنة النتائج."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {
-      "@type":"ListItem",
-      "position":1,
-      "name":"الرئيسية",
-      "item":"https://marketapro.com/"
-    },
-    {
-      "@type":"ListItem",
-      "position":2,
-      "name":"الأدوات",
-      "item":"https://marketapro.com/tools/"
-    },
-    {
-      "@type":"ListItem",
-      "position":3,
-      "name":"أفضل وقت للنشر على إنستغرام",
-      "item":"https://marketapro.com/tools/best-time-to-post-instagram/"
-    }
-  ]
-}
-</script>
-
-  
-  <style>
+<style>
     .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-top:18px}
     @media (max-width: 900px){.wrap{grid-template-columns:1fr}}
     .field{margin-top:10px}
@@ -138,6 +64,144 @@
       z-index: 9999;
     }
   </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://marketapro.com/#organization",
+      "name": "MarketAPro",
+      "url": "https://marketapro.com/",
+      "description": "أدوات تسويق رقمية مجانية ومقالات عملية لتحسين الأداء وزيادة التفاعل."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://marketapro.com/#website",
+      "url": "https://marketapro.com/",
+      "name": "MarketAPro",
+      "publisher": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://marketapro.com/tools/best-time-to-post-instagram/",
+      "url": "https://marketapro.com/tools/best-time-to-post-instagram/",
+      "name": "أفضل وقت للنشر على إنستغرام — أداة مجانية بالعربية | MarketAPro",
+      "description": "اكتشف أفضل وقت للنشر على إنستغرام حسب بلدك ونوع الحساب والهدف (تفاعل/مبيعات/وصول). أداة عربية مجانية من MarketAPro مع توصيات عملية وجدول أوقات جاهز.",
+      "isPartOf": {
+        "@id": "https://marketapro.com/#website"
+      },
+      "about": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://marketapro.com/tools/best-time-to-post-instagram/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://marketapro.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "الأدوات",
+          "item": "https://marketapro.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "best time to post instagram",
+          "item": "https://marketapro.com/tools/best-time-to-post-instagram/"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://marketapro.com/tools/best-time-to-post-instagram/#app",
+      "name": "أفضل وقت للنشر على إنستغرام — أداة مجانية بالعربية | MarketAPro",
+      "url": "https://marketapro.com/tools/best-time-to-post-instagram/",
+      "applicationCategory": "MarketingApplication",
+      "operatingSystem": "All",
+      "inLanguage": "ar",
+      "isPartOf": {
+        "@id": "https://marketapro.com/#website"
+      },
+      "publisher": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "image": "https://marketapro.com/assets/og-best-time-instagram.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://marketapro.com/tools/best-time-to-post-instagram/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ما هو أفضل وقت للنشر على إنستغرام؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا يوجد وقت ثابت للجميع. الأفضل هو وقت نشاط جمهورك. ابدأ بالمساء وعطلة نهاية الأسبوع ثم اختبر أسبوعين."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أحدد وقت الذروة لجمهوري؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "من Insights: Audience/Most active times. سجّل النتائج وكرر النشر في أعلى ساعتين نشاطًا."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يختلف الوقت بين Reels والبوست؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "أحيانًا نعم. الـ Reels قد تعمل أفضل في المساء، بينما البوستات قد تنجح وقت الظهر—اختبر حسب جمهورك."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كم مرة أحتاج للاختبار؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "على الأقل 10–14 يومًا مع جدول ثابت ثم قارن النتائج."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل التوقيت أهم من جودة المحتوى؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "الجودة أولًا، لكن التوقيت الصحيح يزيد الوصول الأولي وبالتالي يزيد فرص الانتشار."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل الوقت يعتمد على الدولة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، اعتمد على توقيت بلد جمهورك الأساسي وليس بلدك فقط."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
