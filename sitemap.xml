@@ -167,12 +167,55 @@
     <priority>0.90</priority>
   </url>
 
-  <!-- ملف تحقق جوجل -->
+  <!-- صفحات إضافية مهمة -->
   <url>
-    <loc>https://marketapro.com/google2dfefcdad5cc106a.html</loc>
-    <lastmod>2025-12-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.20</priority>
+    <loc>https://marketapro.com/recover-facebook-account/</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://marketapro.com/tools/gold-price/</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://marketapro.com/news/venezuela-shock-usd-gold-volatility-2026/</loc>
+    <lastmod>2026-01-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- تصنيفات المقالات -->
+  <url>
+    <loc>https://marketapro.com/news/category/seo/</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://marketapro.com/news/category/social/</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://marketapro.com/news/category/currency/</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://marketapro.com/news/category/gold/</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.60</priority>
   </url>
 
 </urlset>
