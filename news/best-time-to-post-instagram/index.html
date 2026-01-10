@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -27,64 +27,145 @@
   <link rel="stylesheet" href="/style.css" />
 
   <!-- Article Schema -->
- <script type="application/ld+json">
+<!-- FAQ Schema -->
+
+<script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "headline":"أفضل وقت للنشر على إنستغرام: الدليل الشامل (2026)",
-  "image":"https://marketapro.com/assets/og-best-time-instagram.jpg",
-  "author": {
-    "@type":"Organization",
-    "name":"MarketAPro"
-  },
-  "publisher":{
-    "@type":"Organization",
-    "name":"MarketAPro",
-    "logo":{
-      "@type":"ImageObject",
-      "url":"https://marketapro.com/assets/logo.jpeg"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://marketapro.com/#organization",
+      "name": "MarketAPro",
+      "url": "https://marketapro.com/",
+      "description": "أدوات تسويق رقمية مجانية ومقالات عملية لتحسين الأداء وزيادة التفاعل."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://marketapro.com/#website",
+      "url": "https://marketapro.com/",
+      "name": "MarketAPro",
+      "publisher": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://marketapro.com/news/best-time-to-post-instagram/",
+      "url": "https://marketapro.com/news/best-time-to-post-instagram/",
+      "name": "أفضل وقت للنشر على إنستغرام: الدليل الشامل لزيادة التفاعل والوصول (2026) | MarketAPro",
+      "description": "اكتشف أفضل وقت للنشر على إنستغرام في جميع الدول العربية لعام 2026. دليل شامل + جدول + أداة مجانية تحدد التوقيت المثالي حسب جمهورك ونوع المحتوى.",
+      "isPartOf": {
+        "@id": "https://marketapro.com/#website"
+      },
+      "about": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://marketapro.com/news/best-time-to-post-instagram/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://marketapro.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "المقالات",
+          "item": "https://marketapro.com/news/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "best time to post instagram",
+          "item": "https://marketapro.com/news/best-time-to-post-instagram/"
+        }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://marketapro.com/news/best-time-to-post-instagram/#article",
+      "headline": "أفضل وقت للنشر على إنستغرام: الدليل الشامل لزيادة التفاعل والوصول (2026) | MarketAPro",
+      "description": "اكتشف أفضل وقت للنشر على إنستغرام في جميع الدول العربية لعام 2026. دليل شامل + جدول + أداة مجانية تحدد التوقيت المثالي حسب جمهورك ونوع المحتوى.",
+      "url": "https://marketapro.com/news/best-time-to-post-instagram/",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://marketapro.com/news/best-time-to-post-instagram/"
+      },
+      "isPartOf": {
+        "@id": "https://marketapro.com/#website"
+      },
+      "publisher": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar",
+      "image": "https://marketapro.com/assets/og-best-time-instagram.jpg",
+      "datePublished": "2025-12-20",
+      "dateModified": "2026-01-01"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://marketapro.com/news/best-time-to-post-instagram/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ما هو أفضل وقت للنشر على إنستغرام؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا يوجد وقت ثابت للجميع. الأفضل هو وقت نشاط جمهورك. ابدأ بالمساء وعطلة نهاية الأسبوع ثم اختبر أسبوعين."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أحدد وقت الذروة لجمهوري؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "من Insights: Audience/Most active times. سجّل النتائج وكرر النشر في أعلى ساعتين نشاطًا."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يختلف الوقت بين Reels والبوست؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "أحيانًا نعم. الـ Reels قد تعمل أفضل في المساء، بينما البوستات قد تنجح وقت الظهر—اختبر حسب جمهورك."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كم مرة أحتاج للاختبار؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "على الأقل 10–14 يومًا مع جدول ثابت ثم قارن النتائج."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل التوقيت أهم من جودة المحتوى؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "الجودة أولًا، لكن التوقيت الصحيح يزيد الوصول الأولي وبالتالي يزيد فرص الانتشار."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل الوقت يعتمد على الدولة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، اعتمد على توقيت بلد جمهورك الأساسي وليس بلدك فقط."
+          }
+        }
+      ]
     }
-  },
-  "datePublished":"2025-12-20",
-  "dateModified":"2026-01-01",
-  "mainEntityOfPage":{
-    "@type":"WebPage",
-    "@id":"https://marketapro.com/news/best-time-to-post-instagram/"
-  }
+  ]
 }
 </script>
-
-
-  <!-- FAQ Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"ما هو أفضل وقت للنشر على إنستغرام في 2026؟",
-        "acceptedAnswer":{"@type":"Answer","text":"لا يوجد وقت واحد ثابت للجميع، لكن غالبًا تحقق المنشورات أفضل أداء بين 9–11 صباحًا و6–9 مساءً حسب البلد وسلوك الجمهور."}
-      },
-      {
-        "@type":"Question",
-        "name":"هل توقيت النشر يؤثر على خوارزمية إنستغرام؟",
-        "acceptedAnswer":{"@type":"Answer","text":"نعم. خوارزمية إنستغرام تقيّم سرعة التفاعل بعد النشر، وكلما حصل المنشور على تفاعل مبكر زادت فرص انتشاره."}
-      },
-      {
-        "@type":"Question",
-        "name":"هل يختلف أفضل وقت للنشر بين مصر والسعودية؟",
-        "acceptedAnswer":{"@type":"Answer","text":"نعم. يختلف حسب نمط الحياة والمنطقة الزمنية. في مصر ينجح الصباح والمساء، بينما في السعودية والإمارات يكون المساء الأقوى."}
-      },
-      {
-        "@type":"Question",
-        "name":"هل أستخدم أداة لتحديد أفضل وقت للنشر؟",
-        "acceptedAnswer":{"@type":"Answer","text":"نعم. استخدام أداة تحليل يوفر عليك وقت التجربة العشوائية ويساعدك على اختيار توقيت مبني على بيانات."}
-      }
-    ]
-  }
-  </script>
-
 </head>
 
 <body>
