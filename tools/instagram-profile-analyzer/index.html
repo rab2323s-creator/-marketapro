@@ -162,54 +162,130 @@
   </style>
 
   <!-- ====== Structured Data ====== -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"الرئيسية","item":"https://marketapro.com/"},
-      {"@type":"ListItem","position":2,"name":"الأدوات","item":"https://marketapro.com/tools/"},
-      {"@type":"ListItem","position":3,"name":"تحليل حساب إنستغرام","item":"https://marketapro.com/tools/instagram-profile-analyzer/"}
-    ]
-  }
-  </script>
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name":"أداة تحليل حساب إنستغرام",
-    "applicationCategory":"BusinessApplication",
-    "operatingSystem":"Any",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-    "description":"أداة عربية لتحليل حساب إنستغرام: Engagement Rate + تشخيص حسب نوع الحساب + خطة 14 يوم.",
-    "url":"https://marketapro.com/tools/instagram-profile-analyzer/"
-  }
-  </script>
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"هل أداة تحليل حساب إنستغرام تحتاج تسجيل دخول؟",
-        "acceptedAnswer":{"@type":"Answer","text":"لا. الأداة لا تطلب تسجيل دخول ولا API. تعتمد على بيانات منشوراتك التي تُدخلها (لايكات وتعليقات وعدد متابعين)."}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://marketapro.com/#organization",
+      "name": "MarketAPro",
+      "url": "https://marketapro.com/",
+      "description": "أدوات تسويق رقمية مجانية ومقالات عملية لتحسين الأداء وزيادة التفاعل."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://marketapro.com/#website",
+      "url": "https://marketapro.com/",
+      "name": "MarketAPro",
+      "publisher": {
+        "@id": "https://marketapro.com/#organization"
       },
-      {
-        "@type":"Question",
-        "name":"كيف أحسب معدل التفاعل (Engagement Rate)؟",
-        "acceptedAnswer":{"@type":"Answer","text":"الصيغة الشائعة: (متوسط الإعجابات + متوسط التعليقات) ÷ عدد المتابعين × 100. الأداة تنفّذ ذلك تلقائيًا وتعرض Score وتوصيات."}
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://marketapro.com/tools/instagram-profile-analyzer/",
+      "url": "https://marketapro.com/tools/instagram-profile-analyzer/",
+      "name": "تحليل حساب إنستغرام مجانًا — تقرير تفاعل وخطة 14 يوم | MarketAPro",
+      "description": "أداة عربية لتحليل حساب إنستغرام خلال دقيقة: معدل التفاعل الحقيقي (Engagement Rate) + تشخيص حسب نوع الحساب (موديل/صانع محتوى/متجر) + خطة 7–14 يوم لرفع التفاعل والنمو والمبيعات.",
+      "isPartOf": {
+        "@id": "https://marketapro.com/#website"
       },
-      {
-        "@type":"Question",
-        "name":"لماذا تختلف نتيجتي عن أدوات أخرى؟",
-        "acceptedAnswer":{"@type":"Answer","text":"بعض الأدوات تحسب عناصر إضافية مثل الحفظ والمشاركة والوصول. هذه الأداة تعتمد على اللايكات والتعليقات لأنها الأكثر توفرًا بدون Insights."}
-      }
-    ]
-  }
-  </script>
+      "about": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "inLanguage": "ar"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://marketapro.com/tools/instagram-profile-analyzer/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://marketapro.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "الأدوات",
+          "item": "https://marketapro.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "instagram profile analyzer",
+          "item": "https://marketapro.com/tools/instagram-profile-analyzer/"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://marketapro.com/tools/instagram-profile-analyzer/#app",
+      "name": "تحليل حساب إنستغرام مجانًا — تقرير تفاعل وخطة 14 يوم | MarketAPro",
+      "url": "https://marketapro.com/tools/instagram-profile-analyzer/",
+      "applicationCategory": "MarketingApplication",
+      "operatingSystem": "All",
+      "inLanguage": "ar",
+      "isPartOf": {
+        "@id": "https://marketapro.com/#website"
+      },
+      "publisher": {
+        "@id": "https://marketapro.com/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "image": "https://marketapro.com/assets/og-instagram-profile-analyzer.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://marketapro.com/tools/instagram-profile-analyzer/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "هل الأداة مجانية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، مجانية بالكامل."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل تحتاج تسجيل؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا، لا تحتاج أي تسجيل."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "كيف أحصل على أفضل نتيجة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "اتبع التعليمات داخل الصفحة وأدخل البيانات بدقة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل النتائج دقيقة 100%؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "النتائج تقديرية وتعتمد على البيانات المدخلة أو المصدر المستخدم."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
