@@ -10,22 +10,29 @@
 
   <link rel="canonical" href="https://marketapro.com/" />
 
+  <!-- Robots / Snippet -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
   <!-- Open Graph -->
   <meta property="og:title" content="MarketAPro | أدوات تسويق رقمية مجانية بالعربية (SEO + إنستغرام + عملات + ذهب)" />
   <meta property="og:description" content="MarketAPro: أدوات تسويق مجانية بالعربية تساعدك على تحسين السيو، حساب معدل التفاعل على إنستغرام، معرفة أفضل وقت للنشر، تحويل العملات، متابعة سعر الذهب، وتحليل الحسابات — نتائج فورية بدون تسجيل." />
   <meta property="og:url" content="https://marketapro.com/" />
   <meta property="og:type" content="website" />
-  <!-- ✅ ضع صورة 1200x630 لاحقًا داخل /assets -->
-  <!-- <meta property="og:image" content="https://marketapro.com/assets/og-home.jpg" /> -->
-  <!-- <meta name="twitter:image" content="https://marketapro.com/assets/og-home.jpg" /> -->
+  <meta property="og:locale" content="ar_AR" />
+  <!-- ✅ تأكد أن هذه الصورة موجودة فعليًا داخل /assets -->
+  <meta property="og:image" content="https://marketapro.com/assets/og-home.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MarketAPro | أدوات تسويق رقمية مجانية بالعربية" />
+  <meta name="twitter:description" content="أدوات تسويق مجانية بالعربية: سيو + إنستغرام + عملات + ذهب — نتائج فورية بدون تسجيل." />
+  <meta name="twitter:image" content="https://marketapro.com/assets/og-home.jpg" />
 
   <link rel="stylesheet" href="/style.css" />
 
-  <!-- WebSite Schema -->
-<!-- Organization Schema (اختياري لكنه مفيد) -->
-<style>
+  <style>
     /* تحسينات فخمة خفيفة بدون كسر style.css */
     .hero .card h1{margin:0 0 10px;font-size:30px;line-height:1.4}
     .hero .card p{line-height:1.9}
@@ -45,58 +52,110 @@
     }
     .home-cta strong{display:block;margin-bottom:4px}
     .home-cta span{color:var(--muted);font-size:13px}
+    .faq-list{margin:10px 0 0;padding:0;list-style:none}
+    .faq-list li{padding:10px 0;border-top:1px solid var(--border)}
+    .faq-list li:first-child{border-top:0}
+    .faq-q{font-weight:800;margin:0 0 6px}
+    .faq-a{margin:0;color:var(--muted);line-height:1.9}
   </style>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://marketapro.com/#organization",
-      "name": "MarketAPro",
-      "url": "https://marketapro.com/",
-      "description": "أدوات تسويق رقمية مجانية ومقالات عملية لتحسين الأداء وزيادة التفاعل."
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://marketapro.com/#website",
-      "url": "https://marketapro.com/",
-      "name": "MarketAPro",
-      "publisher": {
-        "@id": "https://marketapro.com/#organization"
-      },
-      "inLanguage": "ar"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://marketapro.com/",
-      "url": "https://marketapro.com/",
-      "name": "MarketAPro — أدوات تسويق رقمية مجانية بالعربية",
-      "description": "MarketAPro منصة أدوات تسويق رقمية مجانية بالعربية لمساعدة صناع المحتوى والمسوقين على تحليل الأداء وزيادة التفاعل واتخاذ قرارات مبنية على بيانات — بدون تسجيل.",
-      "isPartOf": {
-        "@id": "https://marketapro.com/#website"
-      },
-      "about": {
-        "@id": "https://marketapro.com/#organization"
-      },
-      "inLanguage": "ar"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://marketapro.com/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "الرئيسية",
-          "item": "https://marketapro.com/"
+  <!-- Structured Data: Organization + WebSite + WebPage + Breadcrumb + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://marketapro.com/#organization",
+        "name": "MarketAPro",
+        "url": "https://marketapro.com/",
+        "description": "أدوات تسويق رقمية مجانية ومقالات عملية لتحسين الأداء وزيادة التفاعل.",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://marketapro.com/assets/og-home.jpg",
+          "width": 1200,
+          "height": 630
         }
-      ]
-    }
-  ]
-}
-</script>
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://marketapro.com/#website",
+        "url": "https://marketapro.com/",
+        "name": "MarketAPro",
+        "publisher": { "@id": "https://marketapro.com/#organization" },
+        "inLanguage": "ar"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://marketapro.com/#webpage",
+        "url": "https://marketapro.com/",
+        "name": "MarketAPro — أدوات تسويق رقمية مجانية بالعربية",
+        "description": "MarketAPro منصة أدوات تسويق رقمية مجانية بالعربية لمساعدة صناع المحتوى والمسوقين على تحليل الأداء وزيادة التفاعل واتخاذ قرارات مبنية على بيانات — بدون تسجيل.",
+        "isPartOf": { "@id": "https://marketapro.com/#website" },
+        "about": { "@id": "https://marketapro.com/#organization" },
+        "inLanguage": "ar",
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://marketapro.com/assets/og-home.jpg",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://marketapro.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "الرئيسية",
+            "item": "https://marketapro.com/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://marketapro.com/#faq",
+        "isPartOf": { "@id": "https://marketapro.com/#webpage" },
+        "inLanguage": "ar",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "هل أدوات MarketAPro مجانية؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم، MarketAPro يوفر أدوات تسويق مجانية بالعربية بنتائج فورية بدون أي رسوم."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل أحتاج إلى تسجيل حساب لاستخدام الأدوات؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "لا. يمكنك استخدام الأدوات مباشرة بدون تسجيل، مع تجربة سريعة وخفيفة."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ما أهم الأدوات التي تساعدني على زيادة التفاعل في إنستغرام؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ابدأ بحاسبة معدل التفاعل لمعرفة وضع حسابك، ثم استخدم أداة أفضل وقت للنشر لرفع الوصول وتحسين الأداء."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل MarketAPro مناسب لصنّاع المحتوى والمسوقين؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم. الأدوات مصممة لصنّاع المحتوى، المسوقين، وأصحاب البيزنس لاتخاذ قرارات مبنية على بيانات بسرعة."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -125,8 +184,6 @@
   </div>
 </header>
 
-
-
 <main id="content" class="container">
 
   <section class="hero">
@@ -134,7 +191,7 @@
 
       <!-- Hero Card -->
       <div class="card">
-        <h1>أدوات تسويق تساعدك على النمو بشكل أسرع</h1>
+        <h1>أدوات تسويق رقمية مجانية بالعربية تساعدك على النمو بشكل أسرع</h1>
         <p>
           منصّة أدوات بسيطة وفعّالة تساعدك على تحليل الأداء، تحسين التفاعل،
           واتخاذ قرارات مبنية على بيانات — <strong>بدون تسجيل</strong> وبدون تعقيد.
@@ -148,17 +205,20 @@
         </div>
 
         <div class="cta-row" style="margin-top:14px">
-          <a class="btn primary" href="/tools/">ابدأ من صفحة الأدوات</a>
-          <a class="btn" href="/news/">اقرأ الأدلة</a>
+          <a class="btn primary" href="/tools/" aria-label="ابدأ باستخدام أدوات التسويق المجانية">ابدأ باستخدام أدوات التسويق المجانية</a>
+          <a class="btn" href="/news/" aria-label="اقرأ أدلة التسويق والسوشيال والسيو">اقرأ الأدلة</a>
         </div>
 
-        <div class="home-cta" aria-label="دعم سريع">
+        <div class="home-cta" aria-label="دعم سريع عبر واتساب">
           <div>
             <strong>تريد توصية سريعة لحسابك؟</strong>
             <span>أرسل لنا رابط حسابك وسنقترح أول 3 تحسينات خلال 24 ساعة.</span>
           </div>
+
+          <!-- ⚠️ غيّر رقم الواتساب هنا إلى رقمك الحقيقي بصيغة دولية -->
           <a class="btn primary"
-             href="https://wa.me/491234567890?text=مرحبًا%20MarketAPro%2C%20أريد%20توصيات%20سريعة%20لحسابي%20على%20إنستغرام"
+             aria-label="التواصل عبر واتساب للحصول على توصيات سريعة"
+             href="https://wa.me/491234567890?text=مرحبًا%20MarketAPro%2C%20أريد%20توصيات%20سريعة%20لحسابي%20على%20إنستغرام&utm_source=homepage&utm_medium=cta&utm_campaign=quick_audit"
              target="_blank" rel="noopener">
             واتساب
           </a>
@@ -210,19 +270,19 @@
 
       <div class="tools-grid" style="margin-top:14px">
 
-        <a class="tool-card" href="/tools/" aria-label="الذهاب إلى صفحة الأدوات">
+        <a class="tool-card" href="/tools/" aria-label="استعراض جميع أدوات التسويق المجانية في MarketAPro">
           <h3>كل الأدوات</h3>
           <p>استعرض قائمة الأدوات المجانية، واستخدم ما يناسبك فورًا.</p>
           <span class="badge">ابدأ الآن</span>
         </a>
 
-        <a class="tool-card" href="/tools/instagram-engagement-calculator/" aria-label="حاسبة معدل التفاعل على إنستغرام">
+        <a class="tool-card" href="/tools/instagram-engagement-calculator/" aria-label="استخدام حاسبة معدل التفاعل على إنستغرام">
           <h3>حاسبة معدل التفاعل (إنستغرام)</h3>
           <p>احسب Engagement Rate بدقة اعتمادًا على الإعجابات والتعليقات خلال ثوانٍ.</p>
           <span class="badge">جرّب الآن</span>
         </a>
 
-        <a class="tool-card" href="/tools/best-time-to-post-instagram/" aria-label="أفضل وقت للنشر على إنستغرام">
+        <a class="tool-card" href="/tools/best-time-to-post-instagram/" aria-label="معرفة أفضل وقت للنشر على إنستغرام">
           <h3>أفضل وقت للنشر (إنستغرام)</h3>
           <p>اقتراحات قوية حسب البلد والهدف ونوع المحتوى + ملخص جاهز للنسخ.</p>
           <span class="badge">جرّب الآن</span>
@@ -232,14 +292,43 @@
 
       <div class="divider"></div>
 
-      <div class="home-cta" aria-label="دعوة لتجربة الأداة">
+      <div class="home-cta" aria-label="دعوة لتجربة أداة زيادة التفاعل">
         <div>
           <strong>تريد زيادة التفاعل بسرعة؟</strong>
           <span>ابدأ بحساب معدل التفاعل، ثم جرّب أداة أفضل وقت للنشر لرفع الوصول.</span>
         </div>
-        <a class="btn primary" href="/tools/instagram-engagement-calculator/">ابدأ بالحاسبة</a>
+        <a class="btn primary" href="/tools/instagram-engagement-calculator/" aria-label="ابدأ بحاسبة معدل التفاعل على إنستغرام">ابدأ بالحاسبة</a>
       </div>
 
+    </div>
+  </section>
+
+  <!-- FAQ (مفيد جدًا للسيو وRich Results) -->
+  <section class="section" aria-label="الأسئلة الشائعة">
+    <div class="card">
+      <h2 style="margin:0 0 8px">أسئلة شائعة</h2>
+      <p style="margin:0;color:var(--muted);line-height:1.9">
+        إجابات سريعة تساعدك تبدأ باستخدام أدوات MarketAPro بثقة.
+      </p>
+
+      <ul class="faq-list">
+        <li>
+          <p class="faq-q">هل أدوات MarketAPro مجانية؟</p>
+          <p class="faq-a">نعم، جميع الأدوات الأساسية مجانية وتعمل بنتائج فورية باللغة العربية.</p>
+        </li>
+        <li>
+          <p class="faq-q">هل أحتاج إلى تسجيل حساب لاستخدام الأدوات؟</p>
+          <p class="faq-a">لا. يمكنك استخدام الأدوات مباشرة بدون تسجيل للحفاظ على الخصوصية وتجربة أسرع.</p>
+        </li>
+        <li>
+          <p class="faq-q">ما أفضل ترتيب لاستخدام أدوات إنستغرام؟</p>
+          <p class="faq-a">ابدأ بـ <a href="/tools/instagram-engagement-calculator/">حاسبة معدل التفاعل</a> ثم استخدم <a href="/tools/best-time-to-post-instagram/">أفضل وقت للنشر</a> لتحسين الوصول.</p>
+        </li>
+        <li>
+          <p class="faq-q">لمن هذه المنصة؟</p>
+          <p class="faq-a">لصنّاع المحتوى، المسوقين، وأصحاب المشاريع الذين يريدون قرارات مبنية على بيانات بدون تعقيد.</p>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -255,23 +344,21 @@
     </div>
 
     <!-- أدلة وأدوات مهمة -->
-<div style="margin-top:12px">
-  <strong>أدلة وأدوات مهمة</strong>
-  <ul style="list-style:none;padding:0;margin:6px 0">
-    <li>
-    <a href="/news/best-time-to-post-instagram/">أفضل وقت للنشر على إنستغرام (دليل 2026)</a>
+    <div style="margin-top:12px">
+      <strong>أدلة وأدوات مهمة</strong>
+      <ul style="list-style:none;padding:0;margin:6px 0">
+        <li>
+          <a href="/news/best-time-to-post-instagram/">أفضل وقت للنشر على إنستغرام (دليل 2026)</a>
+        </li>
+        <li>
+          <a href="/tools/currency-converter/">
+            محول العملات الفوري (USD ⇄ EGP / SAR / EUR)
+          </a>
+        </li>
+      </ul>
+    </div>
 
-    </li>
-    <li>
-      <a href="/tools/currency-converter/">
-        محول العملات الفوري (USD ⇄ EGP / SAR / EUR)
-      </a>
-    </li>
-  </ul>
-</div>
-
-  </div>
-
+    <!-- ✅ تم نقلها داخل container لتكون المحاذاة سليمة -->
     <div class="card" style="margin-top:14px">
       <h2 style="margin:0 0 8px;font-size:18px">روابط سريعة</h2>
       <div class="pill-row" style="margin-top:6px">
@@ -287,9 +374,9 @@
         <a class="pill" href="/terms/">الشروط</a>
       </div>
     </div>
-    
-</footer>
 
+  </div>
+</footer>
 
 </body>
 </html>
